@@ -112,3 +112,8 @@ def addmeal(request):
 
 def addbeverage(request):
     return render(request, "addbeverage.html")
+
+def updatemeal(request):
+    return render(request, "updatemeal.html")
+def updatebeverage(request):
+    return render(request, "updatebeverage.html")

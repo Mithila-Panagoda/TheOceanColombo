@@ -21,4 +21,21 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$', views.directHome),
+    url(r'^addDeductions/', views.addAdditionalDeductions),
+    url(r'^addEarnings/', views.addEarnings),
+    url(r'^additionsDeductions/', views.additionsDeductions),
+    url(r'^EPFOfWhoseSalaryIsNeeded', views.EPFOfWhoseSalaryIsNeeded),
+    url(r'^EPFToCalculateSalary', views.EPFToCalculateSalary),
+    url(r'^PayrollManagementHome', views.directPayrollManagementHome),
+    url(r'^PaySlip', views.dirPaySlip),
+    url(r'^SalaryDetailsOfAllEmployees', views.dirSalaryDetailsOfAllEmployees),
+    url(r'^SalaryHistoryOfEmployee', views.dirSalaryHistoryOfEmployee),
+    url(r'^UpdateAdditionsOrDeductions', views.dirUpdateAdditionsOrDeductions),
+    url(r'^continuousReport', views.dirContinuousReport),
+    url(r'^HousekeepingReport', views.dirHousekeepingReport),
+    url(r'^InsertRoomDetails', views.dirInsertRoomDetails),
+    url(r'^roomDetails', views.dirRoomDetails),
+    url(r'^roomManagementHome', views.dirRoomManagementHome),
+    url(r'^updateRoomDetails', views.dirUpdateRoomDetails)
 ]
+

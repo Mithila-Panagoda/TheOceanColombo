@@ -1,0 +1,175 @@
+<html>
+    <head>
+        <title>
+            Purchase Orders
+        </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+       
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Inventory <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Add Stock <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Add Suppliers <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">View Suppliers <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Send Purchase Orders <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Reports <span class="sr-only">(current)</span></a>
+                  </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button type="button" class="btn btn-outline-warning">Search</button>
+              </form>
+            </div>
+          </nav>
+          <br>
+          <br>
+          <!--Add Supplier Form-->
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>
+                  <div class="card" style=" height: 45rem;" >
+                    <div class="card-body">
+          <h1 class=text-center style="color: #DC8A1B">Purchase Orders</h1>
+          
+          <div class = "container">
+            
+          <form class = "container-fluid">
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Supplier Email: </label>
+              <input type="name" class="form-control" id="name" placeholder="Supplier Name">
+            </div>
+            
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Date: </label>
+                <input type="date" class="form-control" id="date">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Choose List: </label>
+                <select class="form-control" >
+                    <option>List 01</option>
+                    <option>List 02</option>
+                    <option>List 03</option>
+                    <option>List 04</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">List: </label>
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">Stock ID</th>
+                        <th scope="col">Stock Name</th>
+                        <th scope="col">Quantity</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">#C001</th>
+                        <td>Carrot</td>
+                        <td>500kg</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>          
+            <br>
+            <button type="button" class="btn btn-warning">Send List</button>
+            <button type="button" class="btn btn-danger">Cancel</button>
+        
+          </form>
+          </div>
+          </div>
+          
+          </th>
+          <th>
+            <div class="card" style="  height: 45rem;" >
+              <div class="card-body">
+                <h1 class=text-center style="color: #DC8A1B">Create Lists</h1>
+          
+          <div class = "container">
+            
+          <form class = "container-fluid">
+            <div class="form-group">
+              <label for="exampleFormControlInput1">List Name: </label>
+              <input type="name" class="form-control" id="name" placeholder="List Name">
+            </div>
+
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Stock ID: </label>
+              <input type="name" class="form-control" id="name" placeholder="Stock ID">
+            </div>
+            
+          
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Stock Name: </label>
+              <input type="name" class="form-control" id="name" placeholder="Stock Name">
+            </div>
+
+            
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Quantity: </label>
+              <input type="name" class="form-control" id="name" placeholder="Quantity">
+            </div>
+            <button type="button" class="btn btn-success">Add</button>
+            <br>
+            <br>
+
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Stock ID</th>
+                  <th scope="col">Stock Name</th>
+                  <th scope="col">Quantity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">#C001</th>
+                  <td>Carrot</td>
+                  <td>500kg</td>
+                  <td>
+                    <button type="button" class="btn btn-warning">Select</button>
+                    <button type="button" class="btn btn-danger">-</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            
+          
+            <br>
+            <button type="button" class="btn btn-warning">Create</button>
+            <button type="button" class="btn btn-danger">Cancel</button>
+            
+        </div>
+          </form>
+          </div>
+              </div>
+            </div>
+          </th>
+          </tr>
+        </table> 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>

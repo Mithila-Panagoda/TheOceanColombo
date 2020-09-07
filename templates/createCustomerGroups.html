@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <title>
+            Create Customer Groups
+        </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+       
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Inventory <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Add Stock <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Add Suppliers <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">View Suppliers <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Send Purchase Orders <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Reports <span class="sr-only">(current)</span></a>
+                  </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button type="button" class="btn btn-outline-warning">Search</button>
+              </form>
+            </div>
+          </nav>
+
+          <div class="card" style="  height: 45rem;" >
+            <div class="card-body">
+              <h1 class=text-center style="color: #DC8A1B">Create Customer Groups</h1>
+        
+        <div class = "container">
+          
+        <form class = "container-fluid">
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Group Name: </label>
+            <input type="name" class="form-control" id="name" placeholder="Group Name">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Customer ID: </label>
+            <input type="name" class="form-control" id="name" placeholder="Customer ID">
+          </div>
+          
+        
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Customer Type: </label>
+            <select class="form-control" >
+                <option>Discounted Customers</option>
+                <option>Seasonal Offers ]</option>
+                <option>Birthday</option>
+            </select>
+        </div>
+
+          
+         
+          <button type="button" class="btn btn-success">Add</button>
+          <br>
+          <br>
+
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Customer ID</th>
+                <th scope="col">Customer Type</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">#C001</th>
+                <td>Carrot</td>
+                <td>
+                  <button type="button" class="btn btn-warning">Select</button>
+                  <button type="button" class="btn btn-danger">-</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          
+        
+          <br>
+          <button type="button" class="btn btn-warning">Create</button>
+          <button type="button" class="btn btn-danger">Cancel</button>
+          
+      </div>
+        </form>
+        </div>
+            </div>
+          </div>
+
+          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>

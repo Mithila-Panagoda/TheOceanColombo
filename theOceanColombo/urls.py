@@ -21,4 +21,12 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$', views.directHome),
+    url(r'^addsupplier/', views.directaddsupplier),
+    url(r'^addstock/', views.directaddstock),
+    url(r'^inventory/', views.directinventory),
+    url(r'^purchaseOrders/', views.directpurchaseOrders),
+    url(r'^suppliers/', views.directsuppliers),
+    url(r'^createcustomergroups/', views.directcreatecustomergroups),
+
 ]
+

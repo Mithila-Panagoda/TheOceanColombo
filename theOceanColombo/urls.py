@@ -36,6 +36,7 @@ urlpatterns = [
     url(r'^InsertRoomDetails', views.dirInsertRoomDetails),
     url(r'^roomDetails', views.dirRoomDetails),
     url(r'^roomManagementHome', views.dirRoomManagementHome),
-    url(r'^updateRoomDetails', views.dirUpdateRoomDetails)
+    url(r'^updateRoomDetails', views.dirUpdateRoomDetails),
+    url('InsertRooms',views.InsertRooms, name = "InsertRooms")
 ]
 

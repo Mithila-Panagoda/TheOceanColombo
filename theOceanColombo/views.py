@@ -67,4 +67,7 @@ def dirRoomManagementHome(request):
 def dirUpdateRoomDetails(request):
     return render(request, "UpdateRoomDetails.html")
 
+def InsertRooms(request):
+    return render(request, "roomDetails.html")
+
 

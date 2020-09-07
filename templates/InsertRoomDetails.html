@@ -44,7 +44,8 @@
             <br>
             <h1 class="text-center" style = "color:#DC8A1B">Insert Room Details</h1>
             <br><br>
-            <form class = "container" action = "InsertRoom" method = "post">
+            <form class = "container" action = "/InsertRooms/" method = "post">
+                {% csrf_token %}
                 <div class="form-group row">
                     <label for="roomNumber" class="col-sm-2 col-form-label">Room Number</label>
                     <div class="col-sm-10">

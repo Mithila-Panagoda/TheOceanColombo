@@ -7,6 +7,9 @@
 <body>
     <h1>Hello world</h1>
 
-    <button type="button" onclick="location.href{% url 'log' %}">Logout</button>
+    <form method="POST" action="/customerlogin/">
+        {% csrf_token %}
+        <input type="submit" name="btnlogout" value="Logout">
+    </form>
 </body>
 </html>

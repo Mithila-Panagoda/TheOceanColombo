@@ -17,6 +17,7 @@ from django.conf.urls import url
 from . import views
 from django.contrib import admin
 from django.urls import path
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -44,7 +45,7 @@ urlpatterns = [
     url(r'^suppliers/', views.directsuppliers),
     url(r'^createcustomergroups/', views.directcreatecustomergroups),
     url(r'customerlogin/', views.custloign),
-    url(r'^logout', views.logout, name="log")
+    url(r'^logout/', views.logout),
     url(r'^addDeductions/', views.addAdditionalDeductions),
     url(r'^addEarnings/', views.addEarnings),
     url(r'^additionsDeductions/', views.additionsDeductions),
@@ -60,7 +61,13 @@ urlpatterns = [
     url(r'^InsertRoomDetails', views.dirInsertRoomDetails),
     url(r'^roomDetails', views.dirRoomDetails),
     url(r'^roomManagementHome', views.dirRoomManagementHome),
+    url(r'^updateRoomDetails', views.dirUpdateRoomDetails),
+    url(r'^addmeal/', views.addmeal),
+    url(r'^addbeverage/',views.addbeverage),
+    url(r'^updatemeal/',views.updatemeal),
+    url(r'^updatebeverage/',views.updatebeverage)
     url(r'^updateRoomDetails', views.dirUpdateRoomDetails)
 
 ]
 
+urlpatterns += staticfiles_urlpatterns()

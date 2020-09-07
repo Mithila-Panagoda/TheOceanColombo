@@ -1,6 +1,6 @@
 from django.shortcuts import render
 import pyrebase
-
+from django.contrib import auth
 config = {
     'apiKey': "AIzaSyBew42hA7iZHy7zs47WMqIg-GSBnxP-ttM",
     'authDomain': "theoceancolombo-c128a.firebaseapp.com",
@@ -13,7 +13,7 @@ config = {
 }
 firebase = pyrebase.initialize_app(config)
 
-auth = firebase.auth()
+authe = firebase.auth()
 
 
 def directHome(request):
@@ -37,5 +37,70 @@ def directsuppliers(request):
 
 def directcreatecustomergroups(request):
     return render(request, "createCustomerGroups.html")
+def custloign(request):
+    email = request.POST.get('email')
+    pwd = request.POST.get('pwd')
+    print(email)
+    print(pwd)
+    try:
+        user = authe.sign_in_with_email_and_password(email, pwd)
+    except:
+        message = "Invalid username or password please try again"
+        return render(request, "customerlogin.html", {"msg": message})
+    print(user['idToken'])
+    session_id = user['idToken']
+    request.session['uid'] = str(session_id)
+    return render(request, "test.html")
 
+
+def logout(request):
+    auth.logout(request)
+    return request(request, "test.html")
+def addAdditionalDeductions(request):
+    return render(request, "addAdditionalDeductions.html")
+
+def addEarnings(request):
+    return render(request, "addAdditionalEarnings.html")
+
+def additionsDeductions(request):
+    return render(request, "AdditionsDeductions.html")
+
+def EPFOfWhoseSalaryIsNeeded(request):
+    return render(request, "EPFOfWhoseSalaryIsNeeded.html")
+
+def EPFToCalculateSalary(request):
+    return render(request, "EPFToCalculateSalary.html")
+
+def directPayrollManagementHome(request):
+    return render(request, "PayrollManagementHome.html")
+
+def dirPaySlip(request):
+    return render(request, "PaySlip.html")
+
+def dirSalaryDetailsOfAllEmployees(request):
+    return render(request, "SalaryDetailsOfAllEmployees.html")
+
+def dirSalaryHistoryOfEmployee(request):
+    return render(request, "SalaryHistoryOfEmployee.html")
+
+def dirUpdateAdditionsOrDeductions(request):
+    return render(request, "UpdateAdditionsOrDeductions.html")
+
+def dirContinuousReport(request):
+    return render(request, "continuousReport.html")
+
+def dirHousekeepingReport(request):
+    return render(request, "HousekeepingReport.html")
+
+def dirInsertRoomDetails(request):
+    return render(request, "InsertRoomDetails.html")
+
+def dirRoomDetails(request):
+    return render(request, "roomDetails.html")
+
+def dirRoomManagementHome(request):
+    return render(request, "RoomManagementHome.html")
+
+def dirUpdateRoomDetails(request):
+    return render(request, "UpdateRoomDetails.html")
 

@@ -70,12 +70,6 @@ def reports9(request):
 def reportsdisplay(request):
     return render(request, "ReportsDisplay.html")
 
-
-
-
-
-
-
 def directaddsupplier(request):
     return render(request, "addSupplier.html")
 
@@ -178,6 +172,9 @@ def dirRoomManagementHome(request):
 def dirUpdateRoomDetails(request):
     return render(request, "UpdateRoomDetails.html")
 
+def InsertRooms(request):
+    return render(request, "roomDetails.html")
+
 def addmeal(request):
     return render(request, "addmeal.html")
 
@@ -186,5 +183,6 @@ def addbeverage(request):
 
 def updatemeal(request):
     return render(request, "updatemeal.html")
+  
 def updatebeverage(request):
     return render(request, "updatebeverage.html")

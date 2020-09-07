@@ -21,6 +21,12 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$', views.directHome),
+    url(r'^addsupplier/', views.directaddsupplier),
+    url(r'^addstock/', views.directaddstock),
+    url(r'^inventory/', views.directinventory),
+    url(r'^purchaseOrders/', views.directpurchaseOrders),
+    url(r'^suppliers/', views.directsuppliers),
+    url(r'^createcustomergroups/', views.directcreatecustomergroups),
     url(r'customerlogin/', views.custloign),
     url(r'^logout', views.logout, name="log")
     url(r'^addDeductions/', views.addAdditionalDeductions),
@@ -39,5 +45,6 @@ urlpatterns = [
     url(r'^roomDetails', views.dirRoomDetails),
     url(r'^roomManagementHome', views.dirRoomManagementHome),
     url(r'^updateRoomDetails', views.dirUpdateRoomDetails)
+
 ]
 

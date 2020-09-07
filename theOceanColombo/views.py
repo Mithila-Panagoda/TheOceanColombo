@@ -20,6 +20,23 @@ def directHome(request):
     return render(request, "test.html")
 
 
+def directaddsupplier(request):
+    return render(request, "addSupplier.html")
+
+def directaddstock(request):
+    return render(request, "addStock.html")
+
+def directinventory(request):
+    return render(request, "inventory.html")
+
+def directpurchaseOrders(request):
+    return render(request, "purchaseOrders.html")
+
+def directsuppliers(request):
+    return render(request, "suppliers.html")
+
+def directcreatecustomergroups(request):
+    return render(request, "createCustomerGroups.html")
 def custloign(request):
     email = request.POST.get('email')
     pwd = request.POST.get('pwd')

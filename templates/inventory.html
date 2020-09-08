@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <title>
+            Inventory
+        </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+       
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Inventory <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Add Stock <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Add Suppliers <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">View Suppliers <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Send Purchase Orders <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Reports <span class="sr-only">(current)</span></a>
+                  </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button type="button" class="btn btn-outline-warning">Search</button>
+              </form>
+            </div>
+          </nav>
+          <br>
+          <br>
+          <h1 class=text-center style="color: #DC8A1B">Inventory</h1>
+          <button type="button" class="btn btn-secondary">Add Supplier</button>
+          <button type="button" class="btn btn-secondary">View Supplier</button>
+        <br>
+        <br>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Stock ID</th>
+                <th scope="col">Stock Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Unit Price</th>
+                <th scope="col">Re-Order Level</th>
+                <th scope="col">Status</th>
+                <th scope="col"></th>
+               
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">#C001</th>
+                <td>Carrot</td>
+                <td>500kg</td>
+                <td>Rs.30.00</td>
+                <td>10kg</td>
+                <td style="color: darkgreen;">In-Stock</td>
+                <td>
+                    <button type="button" class="btn btn-warning">Edit</button>
+                    <button type="button" class="btn btn-danger">Remove</button>
+                </td>
+                
+              </tr>
+              <tr>
+                <th scope="row">#C002</th>
+                <td>Cabbage</td>
+                <td>500kg</td>
+                <td>Rs.100.00</td>
+                <td>10kg</td>
+                <td style="color: red;">Out of Stock</td>
+                <td>
+                    <button type="button" class="btn btn-warning">Edit</button>
+                    <button type="button" class="btn btn-danger">Remove</button>
+                </td>
+                
+              </tr>
+            </tbody>
+          </table>
+          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>

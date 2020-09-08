@@ -215,11 +215,6 @@ def addmeal(request):
     db.child("resturant").child("meals").child(mealname).set(data)
     return render(request, "test.html")
 
-
-def addbeverage(request):
-    return render(request, "addbeverage.html")
-
-
 def loadupdatemeal(request):
     return render(request, "updatemeal.html")
 
@@ -244,17 +239,36 @@ def updatemeal(request):
         print(task.val())
         print(task.key())
     return render(request, "test.html")
+def loadaddbeverage(request):
+    return render(request, "addbeverage.html")
+def addbeverage(request):
+    firebase = pyrebase.initialize_app(firebaseconfig)
+    db = firebase.database()
+    name = request.POST.get('name')
+    price = request.POST.get('price')
+    size = request.POST.get('size')
+    desc = request.POST.get('desc')
+    type = request.POST.get('drink')
+    data={"price":price,"size":size,"desc":desc,"type":type }
+    db.child("resturant").child("beverages").child(name).set(data)
+    return render(request, "test.html")
 
 def updatebeverage(request):
     return render(request, "updatebeverage.html")
 
 
 def mealmngt(request):
-    return render(request, "resturantmealmngt.html")
+    #getting meals and loading to html page
+    firebase = pyrebase.initialize_app(firebaseconfig)
+    db = firebase.database()
+    data=db.child("resturant").child("meals").get()
+    to=data.val()
+    print(data.val())
+    return render(request, "resturantmealmngt.html",)
 
 
 def custbillhistory(request):
-    return render(request, "poscustbillhistory.html")
+    return render(request, "poscustbillhistory.html",)
 
 def loadcustpos(request):
     return render(request,"poscustomer.html")

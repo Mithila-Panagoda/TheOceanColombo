@@ -73,7 +73,6 @@ def Capital(request):
 def update6(request):
     return render(request, "update.html")
 
-
 def ledgers(request):
     return render(request, "Ledgers7.html")
 
@@ -200,11 +199,15 @@ def dirUpdateRoomDetails(request):
     return render(request, "UpdateRoomDetails.html")
 
 def loadaddmeal(request):
+
     return render(request, "addmeal.html")
 def InsertRooms(request):
     return render(request, "roomDetails.html")
 
-
+    return render(request,"addmeal.html")
+def InsertRooms(request):
+    return render(request, "roomDetails.html")
+  
 def addmeal(request):
     firebase = pyrebase.initialize_app(firebaseconfig)
     db = firebase.database()
@@ -241,15 +244,19 @@ def updatemeal(request):
     veg = request.POST.get('veg')
     data = {"price": price, "spicelvl": spice, "desc": desc, "veg": veg}
     db.child("resturant").child("meals").child(mealname).update(data)
+    getdata = db.child("resturant").child("meals").get()
+    for task in getdata.each():
+        print(task.val())
+        print(task.key())
     return render(request, "test.html")
 
 def updatebeverage(request):
     return render(request, "updatebeverage.html")
 
-
+def bookvhecicale(request):
+    return render(request,"BookVehicle.html")
 def mealmngt(request):
     return render(request, "resturantmealmngt.html")
-
 
 def custbillhistory(request):
     return render(request, "poscustbillhistory.html")
@@ -292,3 +299,37 @@ def Updatepromo (request):
 
 def loadUpdatepromo (request):
     return render(request, "UpdatePromo.html")
+  
+def loadcustpos(request):
+    return render(request,"poscustomer.html")
+
+def selectroom(request):
+    return render(request, 'selectRoom.html')
+
+
+def loadselectroom(request):
+    return render(request, 'selectroom.html')
+
+
+def confirmbooking(request):
+    return render(request, 'confirmBooking.html')
+
+
+def loadconfirmbooking(request):
+    return render(request, 'confirmBooking.html')
+
+
+def cancelbooking(request):
+    return render(request, 'cancelBooking.html')
+
+
+def loadcancelbooking(request):
+    return render(request, 'cancelBooking.html')
+
+
+def updatebooking(request):
+    return render(request, 'updateBooking.html')
+
+
+def loadupdatebooking(request):
+    return render(request, 'updateBooking.html')

@@ -303,6 +303,30 @@ def loadUpdatepromo (request):
 def loadcustpos(request):
     return render(request,"poscustomer.html")
 
+def custreg(request):
+    return render(request, "customerRegistration.html")
+
+def loadcustreg(request):
+    return render(request, "customerRegistration.html")
+
+def attendance(request):
+    return render(request, "attendance.html")
+
+def loadattendance(request):
+    return render(request, "attendance.html")
+
+def search(request):
+    return render(request, "search.html")
+
+def loadsearch(request):
+    return render(request, "search.html")
+
+def searchresults(request):
+    return render(request, "searchResults")
+
+def loadsearchresults(request):
+    return render(request, "searchResults")
+
 def selectroom(request):
     return render(request, 'selectRoom.html')
 

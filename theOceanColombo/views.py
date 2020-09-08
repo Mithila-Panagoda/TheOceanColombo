@@ -89,7 +89,6 @@ def reports9(request):
 def reportsdisplay(request):
     return render(request, "ReportsDisplay.html")
 
-
 def directaddsupplier(request):
     return render(request, "addSupplier.html")
 
@@ -200,8 +199,11 @@ def dirRoomManagementHome(request):
 def dirUpdateRoomDetails(request):
     return render(request, "UpdateRoomDetails.html")
 
-
 def loadaddmeal(request):
+def InsertRooms(request):
+    return render(request, "roomDetails.html")
+
+def addmeal(request):
     return render(request, "addmeal.html")
 
 
@@ -225,7 +227,6 @@ def addbeverage(request):
 def loadupdatemeal(request):
     return render(request, "updatemeal.html")
 
-
 def getmeals(request, firebase=None):
     firebase = firebase.FirebaseApplication('https://theoceancolombo-c128a.firebaseio.com/resturant')
     result = firebase.get('meals', None)
@@ -243,7 +244,6 @@ def updatemeal(request):
     data = {"price": price, "spicelvl": spice, "desc": desc, "veg": veg}
     db.child("resturant").child("meals").child(mealname).update(data)
     return render(request, "test.html")
-
 
 def updatebeverage(request):
     return render(request, "updatebeverage.html")

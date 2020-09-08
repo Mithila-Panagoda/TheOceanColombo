@@ -13,9 +13,14 @@ firebaseConfig={'apiKey': "AIzaSyBew42hA7iZHy7zs47WMqIg-GSBnxP-ttM",
 
 pyrebase.initialize_app(firebaseConfig)
 #db=firebase.database()
-authe = firebase.auth()
+#authe = firebase.auth()
 
-email="mithilapanagoda@gmail.com"
-pwd ="123456789"
+#email="mithilapanagoda@gmail.com"
+#pwd ="123456789"
 
-authe.create_user_with_email_and_password(email,pwd)
+#authe.create_user_with_email_and_password(email,pwd)
+
+
+db = firebase.database()
+data = db.child("resturant").child("meals").get()
+print(data.val())

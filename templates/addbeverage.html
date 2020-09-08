@@ -52,25 +52,26 @@
         </nav>
         
     </header>
-    <form class="addmeal">
+    <form class="addmeal" action="/addbeverage/" method="POST">
+        {% csrf_token %}
     <center><h1>Add Beverage</h1></center><br><br>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label>Title</label>
-                <input type="text" class="form-control" placeholder="beverage name" required>
+                <input type="text" class="form-control" placeholder="beverage name" name="name" required>
             </div>
             <div class="form-group col-md-6">
                 <label>Price</label>
-                <input type="number" class="form-control" placeholder="Price">
+                <input type="number" class="form-control" placeholder="Price" name="price">
             </div>
         </div>
         <div class="form-group">
             <label>size</label>
-            <input type="number" class="form-control" placeholder="regular/larger">
+            <input type="text" class="form-control" placeholder="regular/larger" name="size">
         </div>
         <div class="form-group">
             <label>Description</label>
-            <input type="text" class="form-control" placeholder="">
+            <input type="text" class="form-control" placeholder="" name="desc">
         </div>
         <div class="form-group">
             <div class="form-group">

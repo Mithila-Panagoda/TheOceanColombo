@@ -79,10 +79,14 @@ urlpatterns = [
     url(r'^updatemeal/',views.updatemeal),
     url(r'^updatebeverage/',views.updatebeverage),
     url(r'^updateRoomDetails', views.dirUpdateRoomDetails),
-    url(r'^loadcustpos', views.loadcustpos)
+    url(r'^loadcustpos', views.loadcustpos),
     url(r'^bookvehicle/',views.bookvhecicale),
     url(r'^updatebeverage/',views.updatebeverage),
     url(r'^updateRoomDetails', views.dirUpdateRoomDetails),
+    url(r'^customerRegistration/', views.custreg),
+    url(r'attendance/', views.attendance),
+    url(r'search/', views.search),
+    url(r'searchresults/', views.searchresults),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

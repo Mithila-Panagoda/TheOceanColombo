@@ -110,6 +110,8 @@ urlpatterns = [
     url(r'^viewEmployee/', views.Viewemployee),
     url(r'^promoManagement/', views.Promomanagement),
     url(r'^updatePromo/', views.Updatepromo),
+    url(r'^HireNew/', views.loadNewemployee),
+    url(r'^updateEmp/', views.loadUpdatepromo)
     url(r'^HireNew/', views.loadNewemployee)
     url(r'^loadcustpos', views.loadcustpos)
     url(r'^bookvehicle/',views.bookvhecicale),
@@ -119,8 +121,6 @@ urlpatterns = [
     url(r'^confirmBooking/', views.confirmbooking),
     url(r'^cancelBooking/', views.cancelbooking),
     url(r'^updateBooking/', views.updatebooking)
-
-
 ]
 
 urlpatterns += staticfiles_urlpatterns()

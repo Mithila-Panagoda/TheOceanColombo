@@ -15,15 +15,20 @@
   <h1 class="text-center">Details Update</h1>
   <div class="card">
    <div class="card-body">
-    <form method="post" class="form-group" action="updatePromo"
+    <form method="post" class="form-group" action="/updatePromo/"
      enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="form-group">
+        <label>EPF: </label> <input type="text"
+         class="form-control" name="EPF" size="50" />
+       </div>
      <div class="form-group">
-      <label for="first name">Name: </label> <input type="text"
+      <label>Name: </label> <input type="text"
        class="form-control" name="firstName" size="50" />
      </div>
      <div class="form-group">
-      <label for="middle name">New Role: </label> <input type="text"
-       class="form-control" name="middleName" size="50" />
+      <label>New Title: </label> <input type="text"
+       class="form-control" name="Title" size="50" />
        </div>
 
      <input type="submit" value="Submit" class="btn btn-success">

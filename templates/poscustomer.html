@@ -1,24 +1,35 @@
-{% load  static %}
+{% load static%}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Update meals</title>
+    <title>POS Customer</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
-        .addmeal {
-            width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 5vh;
+        .table {
+            width: 100%;
+            padding: 30px;
         }
 
-        .formbtn {
-            width: 200px;
-            padding: 10px;
+        .billdata {
+            padding: 60px;
+            width: 600px;
             text-align: center;
+            border-left: 2px solid black
+        }
+
+        .form {
+            width: 500px;
+        }
+
+        .formdata {
+            margin-left: 200px;
+            padding-left: 200px;
+        }
+        .buttons{
+            margin-top:100px;
         }
     </style>
 </head>
@@ -50,39 +61,45 @@
                 </form>
             </div>
         </nav>
-        
+
     </header>
-    <form class="addmeal" method="POST" action="/updatemeal/">
-        {% csrf_token %}
-    <center><h1>Update Meal</h1></center><br><br>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label>Title</label>
-                <input type="text" class="form-control" placeholder="Dish name" name="name">
-            </div>
-            <div class="form-group col-md-6">
-                <label>Price</label>
-                <input type="number" class="form-control" placeholder="Price" name="price">
-            </div>
-        </div>
-        <div class="form-group">
-            <label>Spiceiness</label>
-            <input type="number" class="form-control" placeholder="1:no spice - 5:very spicy" name="spicelvl">
-        </div>
-        <div class="form-group">
-            <label>Description</label>
-            <input type="text" class="form-control" placeholder="" name="desc">
-        </div>
-        <div class="form-group">
-            <div class="form-group">
-                <label>Veg</label><br>
-                <span><input type="radio" name="veg" value="yes"> Yes </span>
-                <input type="radio" name="veg" value="no"> No
-            </div>
-        </div>
-        <input type="submit" class="btn btn-lg btn-success formbtn" value="Update Dish">
-        <input type="reset" class="btn btn-lg btn-warning text-white formbtn" value="Reset">
-    </form>
+    <br><br>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th scope="col" class="formdata ">
+                    <form class="container">
+                        Customer name: <input type="text" name="cname" class="form form-control"><br>
+                        NIC: <input type="text" name="nic" class="form form-control"><br>
+                        Room Type : <input type="text" name="rtype" class="form form-control"><br>
+                        Room Charge: <input type="text" name="rcharge" class="form form-control"><br>
+                        Resturant : <input type="text" name="resturantcharge" class="form form-control"><br>
+                        Additional charges : <input type="text" name="additionalcharge" class="form form-control"><br>
+                        Tax : <input type="number" name="tax" class="form form-control"><br>
+                        Date : <input type="date" name="date" class="form form-control"><br>
+
+                </th>
+                <td class="billdata">
+                    <h1>TIME</h1>
+                    <br><br>
+                    <h2>HH:MM:SS</h2>
+                    <br><br>
+                    <h1>Total payable</h1>
+                    <br><br>
+                    <h2>Rs xxx/=</h2>
+                    <br><br>
+                    <div class="buttons container">
+                        <input type="submit" class="form form-control bg-warning text-light" value="CheckOut"><br>
+                        <input type="submit" class="form form-control bg-info text-light" value="Print bill"><br>
+                        <input type="submit" class="form form-control bg-danger text-light" value="Clear">
+                    </div>
+                </td>
+                </form>
+            </tr>
+        </tbody>
+    </table>
+
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>

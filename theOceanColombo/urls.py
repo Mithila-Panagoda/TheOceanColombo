@@ -62,6 +62,17 @@ urlpatterns = [
     url(r'^roomDetails', views.dirRoomDetails),
     url(r'^roomManagementHome', views.dirRoomManagementHome),
     url(r'^updateRoomDetails', views.dirUpdateRoomDetails),
+    url(r'^loadaddmeal/', views.loadaddmeal),
+    url(r'^loadupdatemeal/',views.loadupdatemeal),
+    url(r'^updatemeal/',views.updatemeal),
+    url(r'^addmeal/',views.addmeal),
+    url(r'^addbeverage/',views.addbeverage),
+    url(r'^updatemeal/',views.updatemeal),
+    url(r'^updatebeverage/',views.updatebeverage),
+    url(r'^updateRoomDetails', views.dirUpdateRoomDetails),
+    url(r'^mealmngt/', views.mealmngt),
+    url(r'^custbillhistory/',views.custbillhistory),
+    url(r'^getmeals/',views.getmeals),
     url('InsertRooms',views.InsertRooms, name="InsertRooms"),
     url(r'^addmeal/', views.addmeal),
     url(r'^addbeverage/',views.addbeverage),
@@ -69,6 +80,28 @@ urlpatterns = [
     url(r'^updatebeverage/',views.updatebeverage),
     url(r'^updateRoomDetails', views.dirUpdateRoomDetails),
     url(r'^roomDetails', views.roomDetails)
+    url(r'^loadcustpos', views.loadcustpos),
+    url(r'^bookvehicle/',views.bookvhecicale),
+    url(r'^updatebeverage/',views.updatebeverage),
+    url(r'^updateRoomDetails', views.dirUpdateRoomDetails),
+    url(r'^customerRegistration/', views.custreg),
+    url(r'attendance/', views.attendance),
+    url(r'search/', views.search),
+    url(r'searchresults/', views.searchresults),
+    url(r'^newEmployee/', views.Newemployee),
+    url(r'^viewEmployee/', views.Viewemployee),
+    url(r'^promoManagement/', views.Promomanagement),
+    url(r'^updatePromo/', views.Updatepromo),
+    url(r'^HireNew/', views.loadNewemployee)
+    url(r'^loadcustpos', views.loadcustpos)
+    url(r'^bookvehicle/',views.bookvhecicale),
+    url(r'^updatebeverage/',views.updatebeverage),
+    url(r'^updateRoomDetails', views.dirUpdateRoomDetails),
+    url(r'^selectRoom/', views.selectroom),
+    url(r'^confirmBooking/', views.confirmbooking),
+    url(r'^cancelBooking/', views.cancelbooking),
+    url(r'^updateBooking/', views.updatebooking)
+
 ]
 
 urlpatterns += staticfiles_urlpatterns()

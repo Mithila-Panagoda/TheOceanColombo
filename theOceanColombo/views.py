@@ -73,7 +73,6 @@ def Capital(request):
 def update6(request):
     return render(request, "update.html")
 
-
 def ledgers(request):
     return render(request, "Ledgers7.html")
 
@@ -200,12 +199,9 @@ def dirUpdateRoomDetails(request):
     return render(request, "UpdateRoomDetails.html")
 
 def loadaddmeal(request):
+    return render(request,"addmeal.html")
 def InsertRooms(request):
     return render(request, "roomDetails.html")
-
-def addmeal(request):
-    return render(request, "addmeal.html")
-
 
 def addmeal(request):
     firebase = pyrebase.initialize_app(firebaseconfig)
@@ -243,6 +239,10 @@ def updatemeal(request):
     veg = request.POST.get('veg')
     data = {"price": price, "spicelvl": spice, "desc": desc, "veg": veg}
     db.child("resturant").child("meals").child(mealname).update(data)
+    getdata = db.child("resturant").child("meals").get()
+    for task in getdata.each():
+        print(task.val())
+        print(task.key())
     return render(request, "test.html")
 
 def updatebeverage(request):
@@ -255,3 +255,6 @@ def mealmngt(request):
 
 def custbillhistory(request):
     return render(request, "poscustbillhistory.html")
+
+def loadcustpos(request):
+    return render(request,"poscustomer.html")

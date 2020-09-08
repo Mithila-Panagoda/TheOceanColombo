@@ -82,7 +82,7 @@ urlpatterns = [
     url(r'^bookvehicle/',views.bookvhecicale),
     url(r'^updatebeverage/',views.updatebeverage),
     url(r'^updateRoomDetails', views.dirUpdateRoomDetails),
-
+    url(r'InsertVehicle',views.Insertvehicle)
 ]
 
 urlpatterns += staticfiles_urlpatterns()

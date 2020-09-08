@@ -200,6 +200,7 @@ def dirUpdateRoomDetails(request):
     return render(request, "UpdateRoomDetails.html")
 
 def loadaddmeal(request):
+    return render(request, "addmeal.html")
 def InsertRooms(request):
     return render(request, "roomDetails.html")
 
@@ -255,3 +256,9 @@ def mealmngt(request):
 
 def custbillhistory(request):
     return render(request, "poscustbillhistory.html")
+
+def Insertvehicle(request):
+    return render(request, "InsertVehicle.html")
+
+def loadInsertvehicle(request):
+    return(request,"InsertVehicle.html")

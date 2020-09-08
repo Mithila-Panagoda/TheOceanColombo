@@ -258,3 +258,34 @@ def custbillhistory(request):
 
 def loadcustpos(request):
     return render(request,"poscustomer.html")
+
+def selectroom(request):
+    return render(request, 'selectRoom.html')
+
+
+def loadselectroom(request):
+    return render(request, 'selectroom.html')
+
+
+def confirmbooking(request):
+    return render(request, 'confirmBooking.html')
+
+
+def loadconfirmbooking(request):
+    return render(request, 'confirmBooking.html')
+
+
+def cancelbooking(request):
+    return render(request, 'cancelBooking.html')
+
+
+def loadcancelbooking(request):
+    return render(request, 'cancelBooking.html')
+
+
+def updatebooking(request):
+    return render(request, 'updateBooking.html')
+
+
+def loadupdatebooking(request):
+    return render(request, 'updateBooking.html')

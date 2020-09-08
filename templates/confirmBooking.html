@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Room Booking</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aldrich">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+
+<body>
+    <div class="container text-uppercase bg-light">
+        <div class="row">
+            <div class="col d-xl-flex justify-content-xl-center align-items-xl-center"><strong>check in</strong></div>
+            <div class="col d-xl-flex justify-content-xl-center align-items-xl-center"><span>Text</span></div>
+            <div class="col d-xl-flex justify-content-xl-center align-items-xl-center"><strong>check out</strong></div>
+            <div class="col d-xl-flex justify-content-xl-center align-items-xl-center"><span>Text</span></div>
+            <div class="col d-xl-flex justify-content-xl-center align-items-xl-center"><button class="btn btn-primary text-uppercase bg-warning" type="button">change dates</button></div>
+        </div>
+    </div>
+    <div class="container bg-light">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="table-responsive table-borderless">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="text-uppercase">Rooms</th>
+                                <th class="text-uppercase text-right">Cost</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Cell 1</td>
+                                <td class="text-right">Cell 2</td>
+                            </tr>
+                            <tr>
+                                <td>Cell 3</td>
+                                <td class="text-right">Cell 4</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Total</td>
+                                <td class="text-right">Cell 4</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col" id="outsideCol">
+                <div class="row">
+                    <div class="col p-2"><span>Estimated Time of Arrival</span><input class="float-right" type="time"></div>
+                </div>
+                <div class="row">
+                    <div class="col p-2"><span class="d-inline-block">Special Requests</span><textarea class="form-control-lg d-block" style="margin-top: 0.5rem;width: 645px;height: 100px;"></textarea></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container bg-warning">
+        <div class="row">
+            <div class="col">
+                <h2 class="text-uppercase bg-warning" style="font-family: Aldrich, sans-serif;background-color: rgba(255,193,7,0);">confirm Booking</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container bg-light">
+        <div class="row">
+            <div class="col p-2">
+                <h4 class="text-uppercase">contact details</h4>
+                <form><input class="form-control" type="text" placeholder="FIRST NAME"><input class="form-control" type="text" placeholder="LAST NAME"><input class="form-control" type="text" placeholder="E MAIL" inputmode="email"><input class="form-control"
+                        type="text" placeholder="CONTACT NUMBER" inputmode="numeric"><input class="form-control" type="text" placeholder="NIC"></form>
+            </div>
+            <div class="col p-2">
+                <h4 class="text-uppercase">billing address</h4>
+                <form><input class="form-control" type="text" placeholder="ADDRESS"><input class="form-control" type="text" placeholder="SUBURB"><input class="form-control" type="text" placeholder="CITY"><input class="form-control" type="text" placeholder="POSTAL CODE"></form>
+            </div>
+            <div class="col p-2">
+                <h4 class="text-uppercase">card details</h4>
+                <form><input class="form-control" type="text" placeholder="CARD NUMBER" inputmode="numeric"><input class="form-control" type="text" placeholder="NAME ON CARD">
+                    <h5 class="text-uppercase">EXPIRY DATE</h5>
+                    <div class="form-row">
+                        <div class="col p-1"><input class="form-control" type="number" max="31" placeholder="1"></div>
+                        <div class="col d-xl-flex p-1"><input class="form-control" type="number" max="12" placeholder="1"></div>
+                    </div>
+                    <h5 class="text-uppercase">cvv</h5><input class="form-control" type="text" placeholder="CVV" inputmode="numeric"></form>
+            </div>
+        </div>
+    </div>
+    <div class="container text-left bg-light">
+        <div class="row p-2">
+            <div class="col">
+                <div class="custom-control text-uppercase custom-checkbox"><input class="custom-control-input" type="checkbox" id="formCheck-1"><label class="custom-control-label" for="formCheck-1">I ACCPET THE TERMS AND CONDITIONS, PAYMENT TERMS</label></div>
+                <div class="custom-control text-uppercase custom-checkbox"><input class="custom-control-input" type="checkbox" id="formCheck-1"><label class="custom-control-label" for="formCheck-1">I WOULD LIKE TO RECIEVE INFORMATION ABOUT PROMOTIONS AND DETAILS</label></div>
+                <div class="text-center p-2"><button class="btn btn-success text-uppercase" type="button" style="margin-top: 0.5rem;">confirm booking</button></div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

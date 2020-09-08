@@ -65,8 +65,9 @@ urlpatterns = [
     url(r'^addmeal/', views.addmeal),
     url(r'^addbeverage/',views.addbeverage),
     url(r'^updatemeal/',views.updatemeal),
-    url(r'^updatebeverage/',views.updatebeverage)
-    url(r'^updateRoomDetails', views.dirUpdateRoomDetails)
+    url(r'^updatebeverage/',views.updatebeverage),
+    url(r'^updateRoomDetails', views.dirUpdateRoomDetails),
+    url(r'^bookvehicle/',views.bookvhecicale),
 
 ]
 

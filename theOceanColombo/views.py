@@ -188,3 +188,6 @@ def updatemeal(request):
     return render(request, "updatemeal.html")
 def updatebeverage(request):
     return render(request, "updatebeverage.html")
+
+def bookvhecicale(request):
+    return render(request,"BookVehicle.html")

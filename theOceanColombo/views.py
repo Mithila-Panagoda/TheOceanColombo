@@ -333,3 +333,22 @@ def updatebooking(request):
 
 def loadupdatebooking(request):
     return render(request, 'updateBooking.html')
+
+def  Insertvehicle(request):
+    firebase = pyrebase.initialize_app(firebaseconfig)
+    db = firebase.database()
+    NUMBER_PLATE= request.POST.get('NUMBER_PLATE')
+    VEHICLE_MODEL=request.POST.get('VEHICLEMODEL')
+    NOOFSEATS=request.POST.get('noOfSeats')
+    data={"Vehicle_Model":VEHICLE_MODEL,"No_Of_Seats":NOOFSEATS}
+
+    db.child('Vehicle').child(NUMBER_PLATE).set(data)
+
+    return render (request,'test.html')
+def loadInsertvehicle(request):
+    return  render(request,'InsertVehicle.html')
+
+def Availablevehiclelist (request):
+    return render(request,'AvailableVehicleList.html')
+def loadAvailableVehicleList(request):
+    return render(request,'AvailableVehicleList.html')

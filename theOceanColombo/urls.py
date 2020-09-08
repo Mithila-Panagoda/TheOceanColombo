@@ -73,7 +73,7 @@ urlpatterns = [
     url(r'^mealmngt/', views.mealmngt),
     url(r'^custbillhistory/',views.custbillhistory),
     url(r'^getmeals/',views.getmeals),
-    url('InsertRooms',views.InsertRooms, name="InsertRooms"),
+    url(r'^InsertRooms',views.InsertRooms, name="InsertRooms"),
     url(r'^addmeal/', views.addmeal),
     url(r'^addbeverage/',views.addbeverage),
     url(r'^updatemeal/',views.updatemeal),
@@ -83,15 +83,18 @@ urlpatterns = [
     url(r'^viewEmployee/', views.Viewemployee),
     url(r'^promoManagement/', views.Promomanagement),
     url(r'^updatePromo/', views.Updatepromo),
-    url(r'^HireNew/', views.loadNewemployee)
-    url(r'^loadcustpos', views.loadcustpos)
+    url(r'^HireNew/', views.loadNewemployee), 
+    url(r'^loadcustpos', views.loadcustpos),
     url(r'^bookvehicle/',views.bookvhecicale),
     url(r'^updatebeverage/',views.updatebeverage),
     url(r'^updateRoomDetails', views.dirUpdateRoomDetails),
     url(r'^selectRoom/', views.selectroom),
     url(r'^confirmBooking/', views.confirmbooking),
     url(r'^cancelBooking/', views.cancelbooking),
-    url(r'^updateBooking/', views.updatebooking)
+    url(r'^updateBooking/', views.updatebooking),
+    url(r'^InsertVehicle/', views.loadInsertvehicle),
+    url(r'^addVehicle/', views.Insertvehicle),
+    url(r'^Availablevehiclelist/',views.loadAvailableVehicleList)
 ]
 
 urlpatterns += staticfiles_urlpatterns()

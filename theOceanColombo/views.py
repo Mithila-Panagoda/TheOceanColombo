@@ -248,10 +248,10 @@ def updatemeal(request):
 def updatebeverage(request):
     return render(request, "updatebeverage.html")
 
-
+def bookvhecicale(request):
+    return render(request,"BookVehicle.html")
 def mealmngt(request):
     return render(request, "resturantmealmngt.html")
-
 
 def custbillhistory(request):
     return render(request, "poscustbillhistory.html")

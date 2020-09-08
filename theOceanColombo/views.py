@@ -109,7 +109,7 @@ def ViewCapital(request):
 
 
 def update6(request):
-    return render(request, "update.html")
+    return render(request, "updateTransacktion.html")
 
 def ledgers(request):
     return render(request, "Ledgers7.html")
@@ -118,7 +118,7 @@ def ledgersView(request):
     return render(request, "ViewLedgers8.html")
 
 def reports9(request):
-    return render(request, "Reports.html")
+    return render(request, "ExpensesReports.html")
 
 def reportsdisplay(request):
     return render(request, "ReportsDisplay.html")

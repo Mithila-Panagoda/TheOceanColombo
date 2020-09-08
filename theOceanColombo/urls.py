@@ -23,16 +23,23 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$', views.directHome),
     url(r'^complaint1/', views.complaintFront),
+    url(r'^ComplaintFrontdata/', views.complaintFrontdata),
     url(r'^complaint2/', views.complaintReply),
     url(r'^complaint3/', views.complaintTyping),
     url(r'^complaint4/', views.complaintCheckReply),
     url(r'^complaint5/', views.complaintUpdateReply),
     url(r'^complaint6/', views.complaintView),
     url(r'^Expenses1/', views.addExpenses),
+    url(r'^addExpensesACC/', views.addExpensesACC),
     url(r'^Expenses2/', views.Expenseslist),
-    url(r'^Expenses3/', views.AddRevenue),
-    url(r'^Expenses4/', views.RevenueList),
-    url(r'^Expenses5/', views.Capital),
+    url(r'^AddRevenue/', views.AddRevenue),
+    url(r'^addrevenueacc/', views.AddRevenueAcc),
+    url(r'^revenueList/', views.RevenueList),
+    url(r'^Capital/', views.Capital),
+    url(r'^CapitalACC/', views.CapitalAcc),
+    url(r'^ViewCapital/', views.ViewCapital),
+
+
     url(r'^Expenses6/', views.update6),
     url(r'^Expenses7/', views.ledgers),
     url(r'^Expenses8/', views.ledgersView),
@@ -45,7 +52,10 @@ urlpatterns = [
     url(r'^suppliers/', views.directsuppliers),
     url(r'^createcustomergroups/', views.directcreatecustomergroups),
     url(r'customerlogin/', views.custloign),
+ 
+    url(r'^logout', views.logout, name="log"),
     url(r'^logout/', views.logout),
+
     url(r'^addDeductions/', views.addAdditionalDeductions),
     url(r'^addEarnings/', views.addEarnings),
     url(r'^additionsDeductions/', views.additionsDeductions),
@@ -61,7 +71,7 @@ urlpatterns = [
     url(r'^InsertRoomDetails', views.dirInsertRoomDetails),
     url(r'^roomDetails', views.dirRoomDetails),
     url(r'^roomManagementHome', views.dirRoomManagementHome),
-    url(r'^updateRoomDetails', views.dirUpdateRoomDetails),
+    url(r'^updateRoomDetails', views.dirUpdateRoomDetails)
     url(r'^loadaddmeal/', views.loadaddmeal),
     url(r'^loadupdatemeal/',views.loadupdatemeal),
     url(r'^updatemeal/',views.updatemeal),
@@ -105,3 +115,4 @@ urlpatterns = [
 ]
 
 urlpatterns += staticfiles_urlpatterns()
+

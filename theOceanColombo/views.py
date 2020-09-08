@@ -1,6 +1,8 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 import pyrebase
 from django.contrib import auth
+
 config = {
     'apiKey': "AIzaSyBew42hA7iZHy7zs47WMqIg-GSBnxP-ttM",
     'authDomain': "theoceancolombo-c128a.firebaseapp.com",
@@ -11,9 +13,11 @@ config = {
     'appId': "1:925636680144:web:da1ab5d4f3b0d3231b01d5",
     'measurementId': "G-YH7TV23J8J"
 }
-firebase = pyrebase.initialize_app(config)
 
-authe = firebase.auth()
+#firebase = pyrebase.initialize_app(config)
+
+
+#authe = firebase.auth()
 
 
 def directHome(request):
@@ -22,6 +26,16 @@ def directHome(request):
 
 def complaintFront(request):
     return render(request, "complaint1front.html")
+def complaintFrontdata(request):
+    firebase = pyrebase.initialize_app(config)
+    db = firebase.database()
+    name = request.POST.get('cusname')
+    email = request.POST.get('email')
+    phnNo = request.POST.get('phn')
+    feed = request.POST.get('feed')
+    data = {"Name": name, "Email": email, "phnNumber": phnNo, "Feed": feed}
+    db.child("Complaint").child("customerFeedback").child(name).set(data)
+    return render(request, "complaint2Reply.html")
 
 def complaintReply(request):
     return render(request, "complaint2Reply.html")
@@ -41,17 +55,58 @@ def complaintView(request):
 def addExpenses(request):
     return render(request, "AddExpense1.html")
 
+def addExpensesACC(request):
+    firebase = pyrebase.initialize_app(config)
+    db = firebase.database()
+    id = request.POST.get('id1')
+    date = request.POST.get('date1')
+    price = request.POST.get('price1')
+    description = request.POST.get('des1')
+
+    data = {"Date": date, "Price": price, "Description": description}
+    db.child("Accounts").child("expenses").child(id).set(data)
+    return render(request, "ExpensesList.html")
+
 def Expenseslist(request):
     return render(request, "ExpensesList.html")
 
 def AddRevenue(request):
     return render(request, "AddRevenue3.html")
+def AddRevenueAcc(request):
+    firebase = pyrebase.initialize_app(config)
+    db = firebase.database()
+    id = request.POST.get('revId')
+    date = request.POST.get('revDate')
+    price = request.POST.get('revPrice')
+    description = request.POST.get('revDis')
+    data = {"Date": date, "Price": price, "Description": description}
+    db.child("Accounts").child("Revenue").child(id).set(data)
+    return render(request, "RevenueList4.html")
+
+
+
 
 def RevenueList(request):
     return render(request, "RevenueList4.html")
 
 def Capital(request):
     return render(request, "CapitalAccount5.html")
+def CapitalAcc(request):
+    firebase = pyrebase.initialize_app(config)
+    db = firebase.database()
+    id = request.POST.get('capId')
+    date = request.POST.get('capDate')
+    type = request.POST.get('capType')
+    price = request.POST.get('capPrice')
+    description = request.POST.get('capDes')
+
+    data = {"Date": date, "Price": price, "Description": description, "Type": type}
+    db.child("Accounts").child("CapitalAccount").child(id).set(data)
+    return render(request, "ViewCapital.html")
+
+def ViewCapital(request):
+    return render(request, "ViewCapital.html")
+
 
 def update6(request):
     return render(request, "update.html")

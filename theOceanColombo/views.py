@@ -2,8 +2,9 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 import pyrebase
 from django.contrib import auth
+#from firebase import firebase
 
-config = {
+firebaseconfig = {
     'apiKey': "AIzaSyBew42hA7iZHy7zs47WMqIg-GSBnxP-ttM",
     'authDomain': "theoceancolombo-c128a.firebaseapp.com",
     'databaseURL': "https://theoceancolombo-c128a.firebaseio.com",
@@ -13,9 +14,12 @@ config = {
     'appId': "1:925636680144:web:da1ab5d4f3b0d3231b01d5",
     'measurementId': "G-YH7TV23J8J"
 }
-firebase = pyrebase.initialize_app(config)
+firebase = pyrebase.initialize_app(firebaseconfig)
 
-authe = firebase.auth()
+
+# db = firebase.database()
+# firebase = pyrebase.initialize_app(firebaseconfig)
+# authe = firebase.auth()
 
 
 def directHome(request):
@@ -25,75 +29,94 @@ def directHome(request):
 def complaintFront(request):
     return render(request, "complaint1front.html")
 
+
 def complaintReply(request):
     return render(request, "complaint2Reply.html")
+
 
 def complaintTyping(request):
     return render(request, "complaint3Type.html")
 
+
 def complaintCheckReply(request):
     return render(request, "complaint4CheckReply.html")
+
 
 def complaintUpdateReply(request):
     return render(request, "complaint5Update.html")
 
+
 def complaintView(request):
     return render(request, "complaint6View.html")
+
 
 def addExpenses(request):
     return render(request, "AddExpense1.html")
 
+
 def Expenseslist(request):
     return render(request, "ExpensesList.html")
+
 
 def AddRevenue(request):
     return render(request, "AddRevenue3.html")
 
+
 def RevenueList(request):
     return render(request, "RevenueList4.html")
+
 
 def Capital(request):
     return render(request, "CapitalAccount5.html")
 
+
 def update6(request):
     return render(request, "update.html")
+
 
 def ledgers(request):
     return render(request, "Ledgers7.html")
 
+
 def ledgersView(request):
     return render(request, "ViewLedgers8.html")
 
+
 def reports9(request):
     return render(request, "Reports.html")
+
 
 def reportsdisplay(request):
     return render(request, "ReportsDisplay.html")
 
 
-
-
-
-
-
 def directaddsupplier(request):
     return render(request, "addSupplier.html")
+
 
 def directaddstock(request):
     return render(request, "addStock.html")
 
+
 def directinventory(request):
     return render(request, "inventory.html")
+
 
 def directpurchaseOrders(request):
     return render(request, "purchaseOrders.html")
 
+
 def directsuppliers(request):
     return render(request, "suppliers.html")
 
+
 def directcreatecustomergroups(request):
     return render(request, "createCustomerGroups.html")
+
+
 def custloign(request):
+    firebase = pyrebase.initialize_app(firebaseconfig)
+    authe = firebase.auth()
     email = request.POST.get('email')
     pwd = request.POST.get('pwd')
     print(email)
@@ -107,7 +130,6 @@ def custloign(request):
     session_id = user['idToken']
     request.session['uid'] = str(session_id)
     return render(request, "test.html")
-
 
 
 def logout(request):
@@ -178,13 +200,58 @@ def dirRoomManagementHome(request):
 def dirUpdateRoomDetails(request):
     return render(request, "UpdateRoomDetails.html")
 
-def addmeal(request):
+
+def loadaddmeal(request):
     return render(request, "addmeal.html")
+
+
+def addmeal(request):
+    firebase = pyrebase.initialize_app(firebaseconfig)
+    db = firebase.database()
+    mealname = request.POST.get('name')
+    price = request.POST.get('price')
+    spice = request.POST.get('spicelvl')
+    desc = request.POST.get('desc')
+    veg = request.POST.get('veg')
+    data = {"price": price, "spicelvl": spice, "desc": desc, "veg": veg}
+    db.child("resturant").child("meals").child(mealname).set(data)
+    return render(request, "test.html")
+
 
 def addbeverage(request):
     return render(request, "addbeverage.html")
 
-def updatemeal(request):
+
+def loadupdatemeal(request):
     return render(request, "updatemeal.html")
+
+
+def getmeals(request, firebase=None):
+    firebase = firebase.FirebaseApplication('https://theoceancolombo-c128a.firebaseio.com/resturant')
+    result = firebase.get('meals', None)
+    print(result)
+
+
+def updatemeal(request):
+    firebase = pyrebase.initialize_app(firebaseconfig)
+    db = firebase.database()
+    mealname = request.POST.get('name')
+    price = request.POST.get('price')
+    desc = request.POST.get('desc')
+    spice = request.POST.get('spicelvl')
+    veg = request.POST.get('veg')
+    data = {"price": price, "spicelvl": spice, "desc": desc, "veg": veg}
+    db.child("resturant").child("meals").child(mealname).update(data)
+    return render(request, "test.html")
+
+
 def updatebeverage(request):
     return render(request, "updatebeverage.html")
+
+
+def mealmngt(request):
+    return render(request, "resturantmealmngt.html")
+
+
+def custbillhistory(request):
+    return render(request, "poscustbillhistory.html")

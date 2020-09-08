@@ -163,6 +163,7 @@ table, th, td {
   </div>
   <br>
    <form class="newEmp" action="/HireNew/">
+       {% csrf_token %}
       <button class="btn">HIRE NEW EMPLOYEE</button>
    </form>
       <button class="btn2">Generate Report</button>

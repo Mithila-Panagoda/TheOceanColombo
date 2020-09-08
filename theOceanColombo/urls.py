@@ -83,7 +83,8 @@ urlpatterns = [
     url(r'^viewEmployee/', views.Viewemployee),
     url(r'^promoManagement/', views.Promomanagement),
     url(r'^updatePromo/', views.Updatepromo),
-    url(r'^HireNew/', views.loadNewemployee)
+    url(r'^HireNew/', views.loadNewemployee),
+    url(r'^updateEmp/', views.loadUpdatepromo)
 ]
 
 urlpatterns += staticfiles_urlpatterns()

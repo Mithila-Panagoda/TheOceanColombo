@@ -266,11 +266,11 @@ def Newemployee(request):
     Address = request.POST.get('Address')
     Phone = request.POST.get('Phone')
     EPF = request.POST.get('EPF')
-    Emergency_Contact= request.POST.get('EemergencyCon')
-    data = {"firstname": First_Name, "lastname": Last_Name, "NIC": NIC, "Title": Title,"employeeType": Employment_type,
+    Emergency_Contact= request.POST.get('EmergencyCon')
+    data = {"firstName": First_Name, "lastName": Last_Name, "NIC": NIC, "Title": Title,"employeeType": Employment_type,
             "Email": Email, "Address": Address, "Phone":Phone,"EmergencyCon":Emergency_Contact}
-    db.child("Staff").child("Employee").child(EPF).update(data)
-    return render(request, "VIewEmployee.html")
+    db.child("Staff").child("Employee").child(EPF).set(data)
+    return render(request, "ViewEmployee.html")
 
 def loadNewemployee(request):
     return render(request, "NewEmployee.html")
@@ -288,7 +288,14 @@ def loadPromomanagement(request):
     return render(request, "PromoManagement.html")
 
 def Updatepromo (request):
-    return render(request, "UpdatePromo.html")
+    firebase = pyrebase.initialize_app(firebaseconfig)
+    db = firebase.database()
+    EPF = request.POST.get('EPF')
+    First_Name= request.POST.get('firstName')
+    Title = request.POST.get('Title')
+    data = {"firstName": First_Name, "Title": Title}
+    db.child("Staff").child("Employee").child(EPF).update(data)
+    return render(request, "PromoManagement.html")
 
 def loadUpdatepromo (request):
     return render(request, "UpdatePromo.html")

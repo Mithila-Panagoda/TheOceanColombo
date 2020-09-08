@@ -62,6 +62,21 @@ body {
   }
 } /*Header style end*/
 
+.btn {
+    background-color: #1a1aff;
+    float: right;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 10px 20px;
+    opacity: 0.6;
+    transition: 0.3s;
+  }
+
+  .btn:hover {opacity: 1}
+
   .btn2 {
     background-color: #33ff33;
     float: right;
@@ -141,6 +156,10 @@ table, th, td {
     <input type="text" placeholder="Search..">
   </div>
   <br>
+  <form class="updEmp" action="/updateEmp/">
+       {% csrf_token %}
+      <button class="btn">UPDATE EMPLOYEE</button>
+   </form>
       <button class="btn2">Generate Report</button>
 
       <br><br><br><br>

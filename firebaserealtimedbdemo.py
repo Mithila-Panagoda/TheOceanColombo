@@ -12,14 +12,15 @@ firebaseConfig={'apiKey': "AIzaSyBew42hA7iZHy7zs47WMqIg-GSBnxP-ttM",
     'measurementId': "G-YH7TV23J8J"}
 
 pyrebase.initialize_app(firebaseConfig)
-db=firebase.database()
+#db=firebase.database()
+#authe = firebase.auth()
 
-#Push Data
-data={"name":"Kai","age":"26","address":["newyork","LA"]}
-db.child("Branch").child("employee").child("male employee").push(data)
+#email="mithilapanagoda@gmail.com"
+#pwd ="123456789"
 
-#Create your own key
+#authe.create_user_with_email_and_password(email,pwd)
 
-data={"age":"20","address":["ny","LA"]}
 
-db.child("Kai").set(data)
+db = firebase.database()
+data = db.child("resturant").child("meals").get()
+print(data.val())

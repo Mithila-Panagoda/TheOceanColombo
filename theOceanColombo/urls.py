@@ -22,6 +22,10 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$', views.directHome),
+
+    url(r'^loadaddsupplier/', views.directaddsupplier),
+    url(r'^addsupplier/', views.addsupplier),
+
     url(r'^complaint1/', views.complaintFront),
     url(r'^ComplaintFrontdata/', views.complaintFrontdata),
     url(r'^complaint2/', views.complaintReply),
@@ -38,8 +42,6 @@ urlpatterns = [
     url(r'^Capital/', views.Capital),
     url(r'^CapitalACC/', views.CapitalAcc),
     url(r'^ViewCapital/', views.ViewCapital),
-
-
     url(r'^Expenses6/', views.update6),
     url(r'^Expenses7/', views.ledgers),
     url(r'^Expenses8/', views.ledgersView),
@@ -48,13 +50,19 @@ urlpatterns = [
     url(r'^addsupplier/', views.directaddsupplier),
     url(r'^addstock/', views.directaddstock),
     url(r'^inventory/', views.directinventory),
+    url(r'^directmessages/', views.directmessages),
+    url(r'^addmessages/', views.addmessages),
+    url(r'^sendmessages/', views.sendmessages),
     url(r'^purchaseOrders/', views.directpurchaseOrders),
     url(r'^suppliers/', views.directsuppliers),
     url(r'^createcustomergroups/', views.directcreatecustomergroups),
     url(r'customerlogin/', views.custloign),
- 
+
+    url(r'^logout', views.logout, name="log"),
+
     url(r'^logout', views.logout, name="log"),
     url(r'^logout/', views.logout),
+
 
     url(r'^addDeductions/', views.addAdditionalDeductions),
     url(r'^addEarnings/', views.addEarnings),
@@ -71,7 +79,7 @@ urlpatterns = [
     url(r'^InsertRoomDetails', views.dirInsertRoomDetails),
     url(r'^roomDetails', views.dirRoomDetails),
     url(r'^roomManagementHome', views.dirRoomManagementHome),
-    url(r'^updateRoomDetails', views.dirUpdateRoomDetails)
+    url(r'^updateRoomDetails', views.dirUpdateRoomDetails),
     url(r'^loadaddmeal/', views.loadaddmeal),
     url(r'^loadupdatemeal/',views.loadupdatemeal),
     url(r'^updatemeal/',views.updatemeal),
@@ -111,6 +119,7 @@ urlpatterns = [
     url(r'^confirmBooking/', views.confirmbooking),
     url(r'^cancelBooking/', views.cancelbooking),
     url(r'^updateBooking/', views.updatebooking)
+
 
 ]
 

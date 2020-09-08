@@ -1,4 +1,8 @@
+
+
 {% load static %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +22,18 @@
                         <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
+
+                        <a class="nav-link" href="#">Insert Room Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">View Room Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Housekeeping Report</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Continuous Report</a>
+
                         <a class="nav-link" href="../InsertRoomDetails">Insert Room Details</a>
                     </li>
                     <li class="nav-item">
@@ -28,6 +44,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../continuousReport">Continuous Report</a>
+
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Sign out</a>
@@ -41,13 +58,19 @@
         </nav>
     </header>
     <main>
+
         <style>img{height: 200px; width: 200px; border: 2px solid black;}</style>
+
         <div class="container-fluid">
             <br>
             <h1 class="text-center" style = "color:#DC8A1B">Insert Room Details</h1>
             <br><br>
+
+            <form class = "container" action = "InsertRoom" method = "post">
+
             <form class = "container" action = "/InsertRooms/" method = "post">
                 {% csrf_token %}
+
                 <div class="form-group row">
                     <label for="roomNumber" class="col-sm-2 col-form-label">Room Number</label>
                     <div class="col-sm-10">
@@ -83,7 +106,12 @@
                 </div>
                 <div class="form-row">
                     <div class="col-3">
+
+                        <button class="btn btn-warning" type="submit">Submit</button>
+
                         <button id = "select" class="btn btn-warning" type="submit">Submit</button>
+
+                      
                     </div>
                     <div class="col-3">
                         <button class="btn btn-secondary" type="reset">Reset</button>
@@ -91,7 +119,9 @@
                     <div class="col-4">
                         <a href="#" class="btn btn-secondary" role="button" aria-pressed="true">Back to Room Management</a>
                     </div>
+
                     <br><br><br>
+
                 </div>
             </form>
             <br><br>

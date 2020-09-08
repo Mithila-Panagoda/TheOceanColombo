@@ -199,10 +199,15 @@ def dirUpdateRoomDetails(request):
     return render(request, "UpdateRoomDetails.html")
 
 def loadaddmeal(request):
-    return render(request,"addmeal.html")
+
+    return render(request, "addmeal.html")
 def InsertRooms(request):
     return render(request, "roomDetails.html")
 
+    return render(request,"addmeal.html")
+def InsertRooms(request):
+    return render(request, "roomDetails.html")
+  
 def addmeal(request):
     firebase = pyrebase.initialize_app(firebaseconfig)
     db = firebase.database()
@@ -256,6 +261,45 @@ def mealmngt(request):
 def custbillhistory(request):
     return render(request, "poscustbillhistory.html")
 
+def Newemployee(request):
+    firebase = pyrebase.initialize_app(firebaseconfig)
+    db = firebase.database()
+    First_Name = request.POST.get('firstName')
+    Last_Name = request.POST.get('lastName')
+    NIC = request.POST.get('NIC')
+    Title = request.POST.get('Title')
+    Employment_type = request.POST.get('employeeType')
+    Email = request.POST.get('Email')
+    Address = request.POST.get('Address')
+    Phone = request.POST.get('Phone')
+    EPF = request.POST.get('EPF')
+    Emergency_Contact= request.POST.get('EemergencyCon')
+    data = {"firstname": First_Name, "lastname": Last_Name, "NIC": NIC, "Title": Title,"employeeType": Employment_type,
+            "Email": Email, "Address": Address, "Phone":Phone,"EmergencyCon":Emergency_Contact}
+    db.child("Staff").child("Employee").child(EPF).update(data)
+    return render(request, "VIewEmployee.html")
+
+def loadNewemployee(request):
+    return render(request, "NewEmployee.html")
+
+def Viewemployee(request):
+    return render(request, "ViewEmployee.html")
+
+def loadViewemployee(request):
+    return render(request, "ViewEmployee.html")
+
+def Promomanagement(request):
+    return render(request, "PromoManagement.html")
+
+def loadPromomanagement(request):
+    return render(request, "PromoManagement.html")
+
+def Updatepromo (request):
+    return render(request, "UpdatePromo.html")
+
+def loadUpdatepromo (request):
+    return render(request, "UpdatePromo.html")
+  
 def loadcustpos(request):
     return render(request,"poscustomer.html")
 
@@ -282,3 +326,34 @@ def searchresults(request):
 
 def loadsearchresults(request):
     return render(request, "searchResults")
+
+def selectroom(request):
+    return render(request, 'selectRoom.html')
+
+
+def loadselectroom(request):
+    return render(request, 'selectroom.html')
+
+
+def confirmbooking(request):
+    return render(request, 'confirmBooking.html')
+
+
+def loadconfirmbooking(request):
+    return render(request, 'confirmBooking.html')
+
+
+def cancelbooking(request):
+    return render(request, 'cancelBooking.html')
+
+
+def loadcancelbooking(request):
+    return render(request, 'cancelBooking.html')
+
+
+def updatebooking(request):
+    return render(request, 'updateBooking.html')
+
+
+def loadupdatebooking(request):
+    return render(request, 'updateBooking.html')

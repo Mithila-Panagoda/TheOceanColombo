@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>h1 {
+    <style>
+    h1 {
     font-size: 40px;
     text-align: center;
 }
@@ -157,17 +158,22 @@ table, th, td {
     <a class="active" href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
+      <a href="#promotion">Promotion</a>
     <input type="text" placeholder="Search..">
   </div>
   <br>
+   <form class="newEmp" action="/HireNew/">
       <button class="btn">HIRE NEW EMPLOYEE</button>
+   </form>
       <button class="btn2">Generate Report</button>
       <br><br><br><br>
-      <form class="srch" action="action_page.php">
+      <form class="srch" action="/searchEmployee/">
         <input type="text" placeholder="Search.." name="search">
         <button type="submit"><i class="fa fa-search"></i></button>
       </form>
 <h2>Manage Employees</h2>
+  <form method="post" class="form-group" action="/viewEmployee/"
+     enctype="multipart/form-data">
 <table style="width:100%">
     <tr>
       <th>First Name</th>
@@ -180,9 +186,9 @@ table, th, td {
       <th>Phone</th>
       <th>EPF</th>
       <th>Emergency contact</th>
-      <th>Terminate</th>
+        <th><form>Terminate</form></th>
      </tr>
   </table>
-
+  </form>
 </body>
 </html>

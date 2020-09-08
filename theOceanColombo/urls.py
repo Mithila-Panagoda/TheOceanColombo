@@ -72,13 +72,18 @@ urlpatterns = [
     url(r'^updateRoomDetails', views.dirUpdateRoomDetails),
     url(r'^mealmngt/', views.mealmngt),
     url(r'^custbillhistory/',views.custbillhistory),
-    url(r'^getmeals/',views.getmeals)
+    url(r'^getmeals/',views.getmeals),
     url('InsertRooms',views.InsertRooms, name="InsertRooms"),
     url(r'^addmeal/', views.addmeal),
     url(r'^addbeverage/',views.addbeverage),
     url(r'^updatemeal/',views.updatemeal),
-    url(r'^updatebeverage/',views.updatebeverage)
-    url(r'^updateRoomDetails', views.dirUpdateRoomDetails)
+    url(r'^updatebeverage/',views.updatebeverage),
+    url(r'^updateRoomDetails', views.dirUpdateRoomDetails),
+    url(r'^newEmployee/', views.Newemployee),
+    url(r'^viewEmployee/', views.Viewemployee),
+    url(r'^promoManagement/', views.Promomanagement),
+    url(r'^updatePromo/', views.Updatepromo),
+    url(r'^HireNew/', views.loadNewemployee)
 ]
 
 urlpatterns += staticfiles_urlpatterns()

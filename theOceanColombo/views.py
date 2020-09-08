@@ -73,6 +73,7 @@ def Capital(request):
 def update6(request):
     return render(request, "update.html")
 
+
 def ledgers(request):
     return render(request, "Ledgers7.html")
 
@@ -87,6 +88,7 @@ def reports9(request):
 
 def reportsdisplay(request):
     return render(request, "ReportsDisplay.html")
+
 
 def directaddsupplier(request):
     return render(request, "addSupplier.html")
@@ -127,6 +129,7 @@ def custloign(request):
     print(user['idToken'])
     session_id = user['idToken']
     request.session['uid'] = str(session_id)
+
     return render(request, "test.html")
 
 
@@ -198,16 +201,22 @@ def dirRoomManagementHome(request):
 def dirUpdateRoomDetails(request):
     return render(request, "UpdateRoomDetails.html")
 
+
 def loadaddmeal(request):
 
     return render(request, "addmeal.html")
+
+
 def InsertRooms(request):
     return render(request, "roomDetails.html")
 
-    return render(request,"addmeal.html")
+    return render(request, "addmeal.html")
+
+
 def InsertRooms(request):
     return render(request, "roomDetails.html")
-  
+
+
 def addmeal(request):
     firebase = pyrebase.initialize_app(firebaseconfig)
     db = firebase.database()
@@ -228,8 +237,10 @@ def addbeverage(request):
 def loadupdatemeal(request):
     return render(request, "updatemeal.html")
 
+
 def getmeals(request, firebase=None):
-    firebase = firebase.FirebaseApplication('https://theoceancolombo-c128a.firebaseio.com/resturant')
+    firebase = firebase.FirebaseApplication(
+        'https://theoceancolombo-c128a.firebaseio.com/resturant')
     result = firebase.get('meals', None)
     print(result)
 
@@ -250,16 +261,22 @@ def updatemeal(request):
         print(task.key())
     return render(request, "test.html")
 
+
 def updatebeverage(request):
     return render(request, "updatebeverage.html")
 
+
 def bookvhecicale(request):
-    return render(request,"BookVehicle.html")
+    return render(request, "BookVehicle.html")
+
+
 def mealmngt(request):
     return render(request, "resturantmealmngt.html")
 
+
 def custbillhistory(request):
     return render(request, "poscustbillhistory.html")
+
 
 def Newemployee(request):
     firebase = pyrebase.initialize_app(firebaseconfig)
@@ -273,35 +290,44 @@ def Newemployee(request):
     Address = request.POST.get('Address')
     Phone = request.POST.get('Phone')
     EPF = request.POST.get('EPF')
-    Emergency_Contact= request.POST.get('EemergencyCon')
-    data = {"firstname": First_Name, "lastname": Last_Name, "NIC": NIC, "Title": Title,"employeeType": Employment_type,
-            "Email": Email, "Address": Address, "Phone":Phone,"EmergencyCon":Emergency_Contact}
+    Emergency_Contact = request.POST.get('EemergencyCon')
+    data = {"firstname": First_Name, "lastname": Last_Name, "NIC": NIC, "Title": Title, "employeeType": Employment_type,
+            "Email": Email, "Address": Address, "Phone": Phone, "EmergencyCon": Emergency_Contact}
     db.child("Staff").child("Employee").child(EPF).update(data)
     return render(request, "VIewEmployee.html")
+
 
 def loadNewemployee(request):
     return render(request, "NewEmployee.html")
 
+
 def Viewemployee(request):
     return render(request, "ViewEmployee.html")
+
 
 def loadViewemployee(request):
     return render(request, "ViewEmployee.html")
 
+
 def Promomanagement(request):
     return render(request, "PromoManagement.html")
+
 
 def loadPromomanagement(request):
     return render(request, "PromoManagement.html")
 
-def Updatepromo (request):
+
+def Updatepromo(request):
     return render(request, "UpdatePromo.html")
 
-def loadUpdatepromo (request):
+
+def loadUpdatepromo(request):
     return render(request, "UpdatePromo.html")
-  
+
+
 def loadcustpos(request):
-    return render(request,"poscustomer.html")
+    return render(request, "poscustomer.html")
+
 
 def selectroom(request):
     return render(request, 'selectRoom.html')
@@ -312,7 +338,37 @@ def loadselectroom(request):
 
 
 def confirmbooking(request):
-    return render(request, 'confirmBooking.html')
+    firebase = pyrebase.initialize_app(firebaseconfig)
+    db = firebase.database()
+    firstName = request.POST.get('first_name')
+    lastName = request.POST.get('last_name')
+    email = request.POST.get('email')
+    contactNumber = request.POST.get('contactNo')
+    NIC = request.POST.get('NIC')
+
+    data = {
+        "FirstName": firstName,
+        "LastName": lastName,
+        "Email": email,
+        "ContactNumber": contactNumber,
+    }
+
+    db.child("Customer").child("Contact Details").child(NIC).set(data)
+
+    address = request.POST.get('address')
+    suburb = request.POST.get('suburb')
+    city = request.POST.get('city')
+    postalCode = request.POST.get('postalCode')
+
+    data = {
+        "Suburb": suburb,
+        "City": city,
+        "PostalCode": postalCode
+    }
+
+    db.child("Payment").child("Billing Address").child(address).set(data)
+
+    return render(request, 'bookingSuccessful.html')
 
 
 def loadconfirmbooking(request):
@@ -333,3 +389,7 @@ def updatebooking(request):
 
 def loadupdatebooking(request):
     return render(request, 'updateBooking.html')
+
+
+def loadbookingconfirmed(request):
+    return render(request, 'bookingSuccessful.html')

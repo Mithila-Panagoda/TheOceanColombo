@@ -5,44 +5,45 @@
     <title>Expenses List</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+          <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+                <a class="nav-link" href="../Expenses1">Expenses </a>
+          </li>
+          <li class="nav-item">
+                <a class="nav-link" href="../AddRevenue">Revenue</a>
+          </li>
+          <li class="nav-item">
+                <a class="nav-link" href="../Capital">Capital Account</a>
+          </li>
+          <li class="nav-item">
+                <a class="nav-link" href="../Expenses7">Ledgers</a>
+          </li>
+          <li class="nav-item">
+                <a class="nav-link" href="../Expenses9">Reports</a>
+          </li>
+
+            </ul>
+
+            <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-warning my-2 my-sm-0" type="button">Search</button>
+            </form>
+      </div>
+  </nav>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-
-      <li class="nav-item">
-        <a class="nav-link" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Expenses </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Revenue</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Capital Account</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Ledgers</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Reports</a>
-      </li>
-
-
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
 
 <br>
 
@@ -52,58 +53,59 @@
 
 
     <div class="container-fluid">
+      <div class="container-fluid" class="form-inline">
+          <div class="form-inline" class="container" >
+              <div class="container">
+                    <table class="table">
+                          <thead>
+                              <tr>
+                                  <th>ExID</th>
+                                  <th>Description</th>
+                                  <th>Amount</th>
+                                  <th>Date</th>
+                                  <th>Update</th>
+                                  <th>Delete</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                      <form action="/Expenses6/" method="GET">
+                                        <button type="submit" class="btn btn-warning">Update</button>
+                                      </form>
+                                    </td>
+                                    <td>
+                                      <form>
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                      </form>
+                                    </td>
 
+                              </tr>
 
-        <form class="form-inline" class="container" >
-                <div class="form-group row">
-                      <label for="" class="col-sm-2 col-form-label">Date</label>
-                            <div class="col-sm-10">
-                                  <input type="date"   class="form-control"id="date" placeholder="enter date">
-                            </div>
-                </div>
-
-                <div class="row" >
-                    <div class="col-sm-7">
-                          <button  onclick="document.location='../Expenses1'" type="button"   class="btn btn-warning mb-2 ">Add New</button>
-                    </div>
-                </div>
-
-                <br>
-                <br>
-
-                <div class="container">
-                  <table class="table">
-                      <thead>
-                            <tr>
-                                <th>ExCode</th>
-                                <th>Description</th>
-                                <th>Amount</th>
-                                <th>Date</th>
-                                <th>Update</th>
-                                <th>Delete</th>
-                            </tr>
-                      </thead>
-                      <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><button  onclick="document.location='../Expenses6'" type="button" class="btn btn-warning">Update</button></td>
-                                <td><button type="submit" class="btn btn-danger">Delete</button></td>
-                            </tr>
-
-                      </tbody>
+                          </tbody>
                   </table>
 
-                  <br>
-                        <div class="col">
-                            <button type="button" class="btn btn-warning ">Add to Account</button>
-                        </div>
-                  </div>
+      <br>
 
-        </form>
-  </div>
+        <div class=container>
+          <div class="row">
+            <div class="col-sm-2">
+                <form action="/Expenses1/" method="get">
+                        <button type="button" onclick="document.location='/Expenses1/'" class="btn btn-secondary ">Add New</button>
+                </form>
+            </div>
+            <div class="col">
+                <form>
+                    <button type="button" class="btn btn-warning ">Add to Account</button>
+                </form>
+            </div>
+          </div>
+        </div>
+
 
 </body>
 </html>

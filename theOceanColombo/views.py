@@ -189,7 +189,7 @@ def InsertRooms(request):
     #push data
     data = {"Room Number" : roomNo, "Room Type" : roomType, "Description" : description, "Room Image" : roomImage}
     db.child("Rooms").child(roomNo).set(data)
-    return render(request, "roomDetails.html")
+    return render(request, "InsertRoomDetails.html")
 
 def addmeal(request):
     return render(request, "addmeal.html")
@@ -202,3 +202,28 @@ def updatemeal(request):
   
 def updatebeverage(request):
     return render(request, "updatebeverage.html")
+
+def dirBackendHome(request):
+    return render(request, "BackendHome.html")
+
+def checkDetails(request):
+    db = firebase.database()
+    timestamps = db.child('Rooms').shallow().get().val()
+    lis_time = []
+
+    for i in timestamps:
+        lis_time.append(i)
+        lis_time.sort(reverse = True)
+    print(lis_time)
+
+    work = []
+
+    for i in lis_time:
+        wor = db.child('Rooms').child(i).get().val().values()
+        work.append(wor)
+
+    print(work)
+
+    comb_list = zip(lis_time, work)
+
+    return render(request, "roomDetails.html", {'comb_list':comb_list})

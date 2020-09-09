@@ -4,26 +4,27 @@
     <meta charset="UTF-8">
     <title>Update Additions or Deductions</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    {% load static %}
 </head>
 <body>
     <header>
         <div class="container-fluid">
-            <img src="img/logo.png" width="110px" height="110px" alt="logo" />
+            <img src="{% static 'images/logo.png' %}" width="110px" height="110px" alt="logo" />
         </div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="../backendHome">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Calculate Salary</a>
+                        <a class="nav-link" href="../EPFToCalculateSalary">Calculate Salary</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Salary Details of All Employees</a>
+                        <a class="nav-link" href="../SalaryDetailsOfAllEmployees">Salary Details of All Employees</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Salary History of an Employee</a>
+                        <a class="nav-link" href="../SalaryHistoryOfEmployee">Salary History of an Employee</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Sign out</a>

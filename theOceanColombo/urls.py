@@ -22,10 +22,9 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$', views.directHome),
-
     url(r'^loadaddsupplier/', views.directaddsupplier),
+    url(r'^addsupplierform/', views.addsupplier),
     url(r'^addsupplier/', views.addsupplier),
-
     url(r'^complaint1/', views.complaintFront),
     url(r'^ComplaintFrontdata/', views.complaintFrontdata),
     url(r'^complaint2/', views.complaintReplyLod),
@@ -57,20 +56,20 @@ urlpatterns = [
     url(r'^addsupplier/', views.directaddsupplier),
     url(r'^addstock/', views.directaddstock),
     url(r'^inventory/', views.directinventory),
-    url(r'^directmessages/', views.directmessages),
+    url(r'^directmessage/', views.directmessages),
     url(r'^addmessages/', views.addmessages),
     url(r'^sendmessages/', views.sendmessages),
     url(r'^purchaseOrders/', views.directpurchaseOrders),
     url(r'^suppliers/', views.directsuppliers),
+    url(r'^editsuppliers/', views.directeditsuppliers),
+    url(r'^updatesuppliersdb/', views.editsupplier),
     url(r'^createcustomergroups/', views.directcreatecustomergroups),
+    url(r'addstockdb/',views.addstock),
+    url(r'^groupdetails/', views.groupdetails),
     url(r'customerlogin/', views.custloign),
-
     url(r'^logout', views.logout, name="log"),
-
     url(r'^logout', views.logout, name="log"),
     url(r'^logout/', views.logout),
-
-
     url(r'^addDeductions/', views.addAdditionalDeductions),
     url(r'^addEarnings/', views.addEarnings),
     url(r'^additionsDeductions/', views.additionsDeductions),
@@ -104,6 +103,7 @@ urlpatterns = [
     url(r'^updatemeal/',views.updatemeal),
     url(r'^updatebeverage/',views.updatebeverage),
     url(r'^updateRoomDetails', views.dirUpdateRoomDetails),
+    url(r'^roomDetails', views.roomDetails),
     url(r'^loadcustpos/', views.loadcustpos),
     url(r'^addcustbill/', views.addcustbill),
     url(r'^loadresturantposhome/',views.loadresturantposhome),
@@ -135,5 +135,7 @@ urlpatterns = [
     url(r'^cancelBooking/', views.cancelbooking),
     url(r'^updateBooking/', views.updatebooking)
 ]
+urlpatterns += staticfiles_urlpatterns()
+
 urlpatterns += staticfiles_urlpatterns()
 

@@ -1,17 +1,18 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>
-            Add Stock Information
+            Add Supplier Information
         </title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
     <body>
 
-     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                 <li class="nav-item active">
                   <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
@@ -40,61 +41,51 @@
             </div>
           </nav>
           <br>
-          <!--Add Stock Form-->
-          <hr>
-          <h1 class=text-center style="color: #DC8A1B">Enter Stock Details</h1>
-          
-          <div class = "container">
-            
-          <form class = "container-fluid" method="post" action="/addstockdb/">
-               {% csrf_token %}
-               <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Stock ID:</label>
-                <div class="col-sm-10">
-                  <input type="name" class="form-control" id="inputEmail3" placeholder="ID" name="stockid">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Stock Name:</label>
-                <div class="col-sm-10">
-                  <input type="name" class="form-control" id="inputEmail3" placeholder="Name" name="stockname">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Unit Price:</label>
-                <div class="col-sm-10">
-                    <input type="name" class="form-control" id="inputEmail3" placeholder="Unit Price" name="unitprice">
-                </div>
-            </div>
-            
-            <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Quantity:</label>
-                <div class="col-sm-10">
-                    <input type="name" class="form-control" id="inputEmail3" placeholder="Quantity" name="quatity">
-                </div>
-            </div>
-
-            
-            <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Re-Order Level:</label>
-                <div class="col-sm-10">
-                    <input type="name" class="form-control" id="inputEmail3" placeholder="Re-Order Level" name="reorderlevel">
-                </div>
-            </div>
-
-            
-            
-          
-            <br>
-            <button type="submit" class="btn btn-warning">Add Stock</button>
-            <button type="button" class="btn btn-danger">Cancel</button>
-            
-
-          </form>
-          </div>
           <br>
-        <hr>
+          <!--Add Supplier Form-->
+          <h1 class=text-center style="color: #DC8A1B">Edit Supplier Details</h1>
+
+          <div class = "container">
+
+          <form class = "container-fluid" method="post" ACTION="/updatesuppliersdb/" >
+              {% csrf_token %}
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Supplier ID: </label>
+              <input type="name" class="form-control"  placeholder="Supplier ID" name="SupplierId"  required oninvalid = "this.setCustomValidity('Invalid Supplier ID')" onchange = "try{setCustomValidity('')}catch(e){}" pattern = "[Ss][0-9]{4}">
+          </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Supplier Name: </label>
+                <input type="name" class="form-control" id="name" placeholder="Supplier Name" name="SupplierName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Nic: </label>
+                <input type="name" class="form-control" id="nic" placeholder="Nic" name="nic" required oninvalid = "this.setCustomValidity('Invalid NIC')" onchange = "try{setCustomValidity('')}catch(e){}" pattern = "[0-9]{15}[Vv]">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Registration No: </label>
+                <input type="name" class="form-control" id="rno" placeholder="Registration No" name="registeredno">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Email: </label>
+                <input type="email" class="form-control" id="eml" placeholder="email@gmail.com" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Address: </label>
+                <input type="name" class="form-control" id="adrs" placeholder="Address" name="address">
+            </div>
+
+            <br>
+            <form method="post" action="/updatesuppliersdb">
+            <button type="submit" class="btn btn-warning">Update</button>
+
+            <button type="button" class="btn btn-danger">Cancel</button>
+
+            </form>
+          </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

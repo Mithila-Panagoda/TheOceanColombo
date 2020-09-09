@@ -22,10 +22,9 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$', views.directHome),
-
     url(r'^loadaddsupplier/', views.directaddsupplier),
     url(r'^addsupplierform/', views.addsupplier),
-
+    url(r'^addsupplier/', views.addsupplier),
     url(r'^complaint1/', views.complaintFront),
     url(r'^ComplaintFrontdata/', views.complaintFrontdata),
     url(r'^complaint2/', views.complaintReply),
@@ -61,13 +60,9 @@ urlpatterns = [
     url(r'addstockdb/',views.addstock),
     url(r'^groupdetails/', views.groupdetails),
     url(r'customerlogin/', views.custloign),
-
     url(r'^logout', views.logout, name="log"),
-
     url(r'^logout', views.logout, name="log"),
     url(r'^logout/', views.logout),
-
-
     url(r'^addDeductions/', views.addAdditionalDeductions),
     url(r'^addEarnings/', views.addEarnings),
     url(r'^additionsDeductions/', views.additionsDeductions),
@@ -102,6 +97,13 @@ urlpatterns = [
     url(r'^updatebeverage/',views.updatebeverage),
     url(r'^updateRoomDetails', views.dirUpdateRoomDetails),
     url(r'^roomDetails', views.roomDetails),
+    url(r'^loadcustpos/', views.loadcustpos),
+    url(r'^addcustbill/', views.addcustbill),
+    url(r'^loadresturantposhome/',views.loadresturantposhome),
+    url(r'^loadupdatebeverage/',views.loadupdatebeverage)
+    url(r'^roomDetails', views.roomDetails),
+    url(r'^backendHome', views.dirBackendHome),
+    url(r'^checkDetails', views.checkDetails, name="checkDetails"),
     url(r'^loadcustpos', views.loadcustpos),
     url(r'^bookvehicle/',views.bookvhecicale),
     url(r'^updatebeverage/',views.updatebeverage),
@@ -115,6 +117,8 @@ urlpatterns = [
     url(r'^promoManagement/', views.Promomanagement),
     url(r'^updatePromo/', views.Updatepromo),
     url(r'^HireNew/', views.loadNewemployee),
+    url(r'^updateEmp/', views.loadUpdatepromo),
+    url(r'^HireNew/', views.loadNewemployee),
     url(r'^loadcustpos', views.loadcustpos),
     url(r'^bookvehicle/',views.bookvhecicale),
     url(r'^updatebeverage/',views.updatebeverage),
@@ -123,9 +127,8 @@ urlpatterns = [
     url(r'^confirmBooking/', views.confirmbooking),
     url(r'^cancelBooking/', views.cancelbooking),
     url(r'^updateBooking/', views.updatebooking)
-
-
 ]
+urlpatterns += staticfiles_urlpatterns()
 
 urlpatterns += staticfiles_urlpatterns()
 

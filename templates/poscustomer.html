@@ -68,19 +68,22 @@
         <tbody>
             <tr>
                 <th scope="col" class="formdata ">
-                    <form class="container">
-                        Customer name: <input type="text" name="cname" class="form form-control"><br>
-                        NIC: <input type="text" name="nic" class="form form-control"><br>
-                        Room Type : <input type="text" name="rtype" class="form form-control"><br>
-                        Room Charge: <input type="text" name="rcharge" class="form form-control"><br>
-                        Resturant : <input type="text" name="resturantcharge" class="form form-control"><br>
-                        Additional charges : <input type="text" name="additionalcharge" class="form form-control"><br>
+                    <form class="container"action="/addcustbill//" method="POST" >
+                        {% csrf_token %}
+                        Customer name: <input type="text" name="cname" class="form form-control" required><br>
+                        NIC: <input type="text" name="nic" class="form form-control" required><br>
+                        Room Type : <input type="text" name="rtype" class="form form-control" required><br>
+                        Room Charge: <input type="number" name="rcharge" class="form form-control" ><br>
+                        Resturant : <input type="number"  class="form form-control" name="resturantfee" required><br>
+                        Additional charges : <input type="number" name="additionalcharge" class="form form-control" name="additionalcharge"><br>
                         Payment type<br>
                         <input type="radio" name="ptype" value="cash">cash &nbsp&nbsp
                         <input type="radio" name="ptype" value="card">card<br><br>
-                        Tax : <input type="number" name="tax" class="form form-control"><br>
-                        Date : <input type="date" name="date" class="form form-control"><br>
-
+                        Tax : <input type="number" name="tax" class="form form-control" name="tax"><br>
+                        Date : <input type="date" name="date" class="form form-control" name="date"><br>
+                        <br><br>
+                        <input type="submit" class="form form-control bg-warning text-light" value="CheckOut"><br>
+                    </form>
                 </th>
                 <td class="billdata">
                     <h1>TIME</h1>
@@ -92,9 +95,10 @@
                     <h2>Rs xxx/=</h2>
                     <br><br>
                     <div class="buttons container">
-                        <input type="submit" class="form form-control bg-warning text-light" value="CheckOut"><br>
-                        <input type="submit" class="form form-control bg-info text-light" value="Print bill"><br>
-                        <input type="submit" class="form form-control bg-danger text-light" value="Clear">
+
+
+                        <input type="button" class="form form-control bg-info text-light" value="Print bill"><br>
+                        <input type="button" class="form form-control bg-danger text-light" value="Clear">
                     </div>
                 </td>
                 </form>

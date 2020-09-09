@@ -388,11 +388,7 @@ def updatemeal(request):
     veg = request.POST.get('veg')
     data = {"price": price, "spicelvl": spice, "desc": desc, "veg": veg}
     db.child("resturant").child("meals").child(mealname).update(data)
-    getdata = db.child("resturant").child("meals").get()
-    for task in getdata.each():
-        print(task.val())
-        print(task.key())
-    return render(request, "test.html")
+    return render(request, "resturantmealmngt.html")
 def loadaddbeverage(request):
     return render(request, "addbeverage.html")
 def addbeverage(request):
@@ -405,10 +401,21 @@ def addbeverage(request):
     type = request.POST.get('drink')
     data={"price":price,"size":size,"desc":desc,"type":type }
     db.child("resturant").child("beverages").child(name).set(data)
-    return render(request, "test.html")
+    return render(request, "resturantmealmngt.html")
 
+def loadupdatebeverage(request):
+    return render(request,"updatebeverage.html")
 def updatebeverage(request):
-    return render(request, "updatebeverage.html")
+    firebase = pyrebase.initialize_app(firebaseconfig)
+    db = firebase.database()
+    name = request.POST.get('name')
+    price = request.POST.get('price')
+    size = request.POST.get('size')
+    desc = request.POST.get('desc')
+    drink = request.POST.get('drink')
+    data={"price":price,"size":size,"desc":desc,"drink":drink}
+    db.child("resturant").child("beverages").child(name).update(data)
+    return render(request, "resturantmealmngt.html")
 
 def bookvhecicale(request):
     return render(request,"BookVehicle.html")
@@ -472,6 +479,25 @@ def loadUpdatepromo (request):
   
 def loadcustpos(request):
     return render(request,"poscustomer.html")
+
+def addcustbill(request):
+    firebase = pyrebase.initialize_app(firebaseconfig)
+    db = firebase.database()
+    cname = request.POST.get('cname')
+    nic = request.POST.get('nic')
+    rtype = request.POST.get('rtype')
+    rcharge = request.POST.get('rcharge')
+    resturantfee = request.POST.get('resturantfee')
+    addcharge = request.POST.get('addcharge')
+    ptype = request.POST.get('ptype')
+    tax = request.POST.get('tax')
+    date = request.POST.get('date')
+    data={"Name":cname,"RoomType":rtype,"roomCharge":rcharge,"resturantFee":resturantfee,"addcharge":addcharge,"paymentType":ptype,"TAX":tax}
+    db.child("POS").child("customerbills").child(nic).child(date).set(data)
+    return render(request,"test.html")
+
+def loadresturantposhome(request):
+    return render(request,"resturantpostblselection.html")
 
 def custreg(request):
     return render(request, "customerRegistration.html")

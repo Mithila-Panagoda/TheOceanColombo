@@ -1,55 +1,58 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Meal managment</title>
+    <title>Meal mana%gment</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
 <p id="test"></p>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <header>
+        <div class="container-fluid">
+            <img src="{% static 'logo.png' %}" width="110px" height="110px" alt="logo" />
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../loadresturantposhome">Resturant POS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../loadupdatemeal">update meals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../loadupdatebeverage">update beverages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sign out</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Inventory <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Add Stock <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Add Suppliers <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">View Suppliers <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Send Purchase Orders <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Reports <span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button type="button" class="btn btn-outline-warning">Search</button>
-            </form>
+    </header>
+
         </div>
     </nav>
     <br>
     <br>
     <h1 class=text-center style="color: #DC8A1B">Meal Managment</h1>
-    <form method="get" action="/addmeal/">
+    <form method="get" action="/loadaddmeal/">
         <input type="submit" class="btn btn-secondary" name="btnaddmeal" value="Add Meal">
     </form>
     <br>
-    <form method="POST" action="/addbeverage/">
+    <form method="get" action="/loadaddbeverage/">
         <input type="submit" class="btn btn-secondary" name="btnaddmeal" value="Add Beverage">
     </form>
     <br>

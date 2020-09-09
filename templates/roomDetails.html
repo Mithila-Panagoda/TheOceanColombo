@@ -18,6 +18,7 @@
                         <a class="nav-link" href="../backendHome">Home</a>
                     </li>
                     <li class="nav-item">
+
                         <a class="nav-link" href="../InsertRoomDetails">Insert Room Details</a>
                     </li>
                     <li class="nav-item">
@@ -28,6 +29,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../continuousReport">Continuous Report</a>
+
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Sign out</a>
@@ -45,9 +47,11 @@
             <br>
             <h1 class="text-center" style = "color:#DC8A1B">Room Details</h1>
             <br><br>
+          
             {% for time, work in comb_list %}
             Room Id : {{time}} &nbsp &nbsp &nbsp{{work}}
             {% endfor %}
+
             <table class="table table-striped">
                 <thead>
                 <tr>

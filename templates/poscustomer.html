@@ -1,0 +1,120 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>POS Customer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .table {
+            width: 100%;
+            padding: 30px;
+        }
+
+        .billdata {
+            padding: 60px;
+            width: 600px;
+            text-align: center;
+            border-left: 2px solid black
+        }
+
+        .form {
+            width: 500px;
+        }
+
+        .formdata {
+            margin-left: 200px;
+            padding-left: 200px;
+        }
+        .buttons{
+            margin-top:100px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+            <img src="{% static 'logo.png' %}" width="110px" height="110px" alt="logo" />
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Resturant POS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Menu list</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sign out</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+
+    </header>
+    <br><br>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th scope="col" class="formdata ">
+                    <form class="container"action="/addcustbill//" method="POST" >
+                        {% csrf_token %}
+                        Customer name: <input type="text" name="cname" class="form form-control" required><br>
+                        NIC: <input type="text" name="nic" class="form form-control" required><br>
+                        Room Type : <input type="text" name="rtype" class="form form-control" required><br>
+                        Room Charge: <input type="number" name="rcharge" class="form form-control" ><br>
+                        Resturant : <input type="number"  class="form form-control" name="resturantfee" required><br>
+                        Additional charges : <input type="number" name="additionalcharge" class="form form-control" name="additionalcharge"><br>
+                        Payment type<br>
+                        <input type="radio" name="ptype" value="cash">cash &nbsp&nbsp
+                        <input type="radio" name="ptype" value="card">card<br><br>
+                        Tax : <input type="number" name="tax" class="form form-control" name="tax"><br>
+                        Date : <input type="date" name="date" class="form form-control" name="date"><br>
+                        <br><br>
+                        <input type="submit" class="form form-control bg-warning text-light" value="CheckOut"><br>
+                    </form>
+                </th>
+                <td class="billdata">
+                    <h1>TIME</h1>
+                    <br><br>
+                    <h2>HH:MM:SS</h2>
+                    <br><br>
+                    <h1>Total payable</h1>
+                    <br><br>
+                    <h2>Rs xxx/=</h2>
+                    <br><br>
+                    <div class="buttons container">
+
+                        <input type="button" class="form form-control bg-info text-light" value="Print bill"><br>
+                        <input type="button" class="form form-control bg-danger text-light" value="Clear">
+                    </div>
+                </td>
+                </form>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

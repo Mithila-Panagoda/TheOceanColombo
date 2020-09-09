@@ -16,19 +16,19 @@
                   <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Inventory <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../inventory">Inventory <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Add Stock <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../addstock">Add Stock <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item active">
-                    <a class="nav-link" href="#">Add Suppliers <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../loadaddsupplier">Add Suppliers <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item active">
-                    <a class="nav-link" href="#">View Suppliers <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../suppliers">View Suppliers <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item active">
-                    <a class="nav-link" href="#">Send Purchase Orders <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../purchaseOrders/">Send Purchase Orders <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item active">
                     <a class="nav-link" href="#">Reports <span class="sr-only">(current)</span></a>
@@ -43,8 +43,14 @@
           <br>
           <br>
           <h1 class=text-center style="color: #DC8A1B">Inventory</h1>
-          <button type="button" class="btn btn-secondary">Add Supplier</button>
-          <button type="button" class="btn btn-secondary">View Supplier</button>
+         <form method="post" action="/loadaddsupplier/" >
+             {% csrf_token %}
+             <button type="submit" class="btn btn-secondary">Add Supplier</button>
+         </form>
+         <form method="post" action="/suppliers/">
+              {% csrf_token %}
+          <button type="submit" class="btn btn-secondary">View Supplier</button>
+             </form>
         <br>
         <br>
           <table class="table table-striped">

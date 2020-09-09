@@ -3,7 +3,7 @@ from django.shortcuts import render
 import pyrebase
 from django.contrib import auth
 
-config = {
+firebaseconfig = {
     'apiKey': "AIzaSyBew42hA7iZHy7zs47WMqIg-GSBnxP-ttM",
     'authDomain': "theoceancolombo-c128a.firebaseapp.com",
     'databaseURL': "https://theoceancolombo-c128a.firebaseio.com",
@@ -14,10 +14,10 @@ config = {
     'measurementId': "G-YH7TV23J8J"
 }
 
-#firebase = pyrebase.initialize_app(config)
+firebase = pyrebase.initialize_app(firebaseconfig)
 
 
-#authe = firebase.auth()
+authe = firebase.auth()
 
 
 def directHome(request):
@@ -27,7 +27,7 @@ def directHome(request):
 def complaintFront(request):
     return render(request, "complaint1front.html")
 def complaintFrontdata(request):
-    firebase = pyrebase.initialize_app(config)
+    firebase = pyrebase.initialize_app(firebaseconfig)
     db = firebase.database()
     name = request.POST.get('cusname')
     email = request.POST.get('email')
@@ -35,19 +35,32 @@ def complaintFrontdata(request):
     feed = request.POST.get('feed')
     data = {"Name": name, "Email": email, "phnNumber": phnNo, "Feed": feed}
     db.child("Complaint").child("customerFeedback").child(name).set(data)
-    return render(request, "complaint2Reply.html")
+    return render(request, "complaint1front.html")
 
+def complaintReplyLod(request):
+    return render(request, "complaint2Reply.html")
 def complaintReply(request):
-    return render(request, "complaint2Reply.html")
-
-def complaintTyping(request):
     return render(request, "complaint3Type.html")
 
-def complaintCheckReply(request):
+
+def complaintTypingLod(request):
+    return render(request, "complaint3Type.html")
+def complaintTyping(request):
     return render(request, "complaint4CheckReply.html")
 
-def complaintUpdateReply(request):
+
+
+
+def complaintCheckReplyLod(request):
+    return render(request, "complaint4CheckReply.html")
+def complaintCheckReply(request):
     return render(request, "complaint5Update.html")
+
+
+def complaintUpdateReplyLod(request):
+    return render(request, "complaint5Update.html")
+def complaintUpdateReply(request):
+    return render(request, "complaint4CheckReply.html")
 
 def complaintView(request):
     return render(request, "complaint6View.html")
@@ -56,7 +69,7 @@ def addExpenses(request):
     return render(request, "AddExpense1.html")
 
 def addExpensesACC(request):
-    firebase = pyrebase.initialize_app(config)
+    firebase = pyrebase.initialize_app(firebaseconfig)
     db = firebase.database()
     id = request.POST.get('id1')
     date = request.POST.get('date1')
@@ -67,24 +80,24 @@ def addExpensesACC(request):
     db.child("Accounts").child("expenses").child(id).set(data)
     return render(request, "ExpensesList.html")
 
+def ExpenseslistLod(request):
+    return render(request, "ExpensesList.html")
+
 def Expenseslist(request):
     return render(request, "ExpensesList.html")
 
 def AddRevenue(request):
     return render(request, "AddRevenue3.html")
 def AddRevenueAcc(request):
-    firebase = pyrebase.initialize_app(config)
+    firebase = pyrebase.initialize_app(firebaseconfig)
     db = firebase.database()
-    id = request.POST.get('revId')
-    date = request.POST.get('revDate')
-    price = request.POST.get('revPrice')
-    description = request.POST.get('revDis')
+    id = request.POST.get('id1')
+    date = request.POST.get('date1')
+    price = request.POST.get('price1')
+    description = request.POST.get('des1')
     data = {"Date": date, "Price": price, "Description": description}
     db.child("Accounts").child("Revenue").child(id).set(data)
     return render(request, "RevenueList4.html")
-
-
-
 
 def RevenueList(request):
     return render(request, "RevenueList4.html")
@@ -92,7 +105,7 @@ def RevenueList(request):
 def Capital(request):
     return render(request, "CapitalAccount5.html")
 def CapitalAcc(request):
-    firebase = pyrebase.initialize_app(config)
+    firebase = pyrebase.initialize_app(firebaseconfig)
     db = firebase.database()
     id = request.POST.get('capId')
     date = request.POST.get('capDate')
@@ -110,15 +123,32 @@ def ViewCapital(request):
 
 def update6(request):
     return render(request, "updateTransacktion.html")
+def updateExpense(request):
+    firebase = pyrebase.initialize_app(firebaseconfig)
+    db = firebase.database()
+    id = request.POST.get('id1')
+    date = request.POST.get('date1')
+    price = request.POST.get('price1')
+    description = request.POST.get('des1')
 
-def ledgers(request):
+    data = {"Date": date, "Price": price, "Description": description}
+    db.child("Accounts").child("expenses").child(id).update(data)
+    return render(request, "ExpensesList.html")
+
+
+def ledgersLod(request):
     return render(request, "Ledgers7.html")
+def ledgers(request):
+    return render(request, "ViewLedgers8.html")
+
 
 def ledgersView(request):
     return render(request, "ViewLedgers8.html")
 
-def reports9(request):
+def reports9Lod(request):
     return render(request, "ExpensesReports.html")
+def reports9(request):
+    return render(request, "ReportsDisplay.html")
 
 def reportsdisplay(request):
     return render(request, "ReportsDisplay.html")

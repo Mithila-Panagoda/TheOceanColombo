@@ -97,7 +97,9 @@ urlpatterns = [
     url(r'^updatemeal/',views.updatemeal),
     url(r'^updatebeverage/',views.updatebeverage),
     url(r'^updateRoomDetails', views.dirUpdateRoomDetails),
-    url(r'^roomDetails', views.roomDetails)
+    url(r'^roomDetails', views.roomDetails),
+    url(r'^backendHome', views.dirBackendHome),
+    url(r'^checkDetails', views.checkDetails, name="checkDetails"),
     url(r'^loadcustpos', views.loadcustpos),
     url(r'^bookvehicle/',views.bookvhecicale),
     url(r'^updatebeverage/',views.updatebeverage),
@@ -111,9 +113,9 @@ urlpatterns = [
     url(r'^promoManagement/', views.Promomanagement),
     url(r'^updatePromo/', views.Updatepromo),
     url(r'^HireNew/', views.loadNewemployee),
-    url(r'^updateEmp/', views.loadUpdatepromo)
-    url(r'^HireNew/', views.loadNewemployee)
-    url(r'^loadcustpos', views.loadcustpos)
+    url(r'^updateEmp/', views.loadUpdatepromo),
+    url(r'^HireNew/', views.loadNewemployee),
+    url(r'^loadcustpos', views.loadcustpos),
     url(r'^bookvehicle/',views.bookvhecicale),
     url(r'^updatebeverage/',views.updatebeverage),
     url(r'^updateRoomDetails', views.dirUpdateRoomDetails),
@@ -122,6 +124,5 @@ urlpatterns = [
     url(r'^cancelBooking/', views.cancelbooking),
     url(r'^updateBooking/', views.updatebooking)
 ]
-
 urlpatterns += staticfiles_urlpatterns()
 
